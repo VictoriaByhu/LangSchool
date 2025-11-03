@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="sticky-top shadow-sm">
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container-fluid px-3">
+            <a class=" d-flex align-items-center" href="../mainPage.html">
+                <img src="../assets/logo.PNG" style="height:150px " alt="LinguaLab" class="rounded-2">
+
+            </a>
+            <button class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navMenu" 
+                aria-controls="navMenu" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu"> 
+        <ul class="navbar-nav gap-3 mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Courses/courses.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Courses/details.html">Details & Prices</a></li>
+            <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Feedbacks</a></li>
+            <li class="nav-item"><button class="btn" data-bs-toggle="modal" data-bs-target="#authModal">Sign in</button></li>
+            <li class="nav-item"><button class="btn" data-bs-toggle="modal" data-bs-target="#authModal">Sign up</button></li>
+            <li class="nav-item">
+                <a class ... href="../mainPage.html"> <li class="nav-item">
+                <a class="nav-link fw-bold" href="../uk/AboutUs/aboutUs.html">УКР</a>
+            </li>
+        </ul>
+    </div>
+        </nav>
+        
+    </header>
+
+    <main class="main-content">
+        <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2>About us</h2>
+                    <p class="lead">LinguaLab is a school with modern methods, an emphasis on conversational practice, and an individual approach. Our teachers are certified specialists with teaching experience in the country and abroad.</p>
+                    <p class="lead">We use game-based approaches, role-playing exercises, and lots of talking from the first lesson.</p>
+                </div>
+                <aside class="col-lg-4">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick level test</h5>
+                            <p class="card-text">Find out your starting level in 10 minutes - we will select a course for you.</p>
+                            <a href="#" class="btn btn-outline-primary">Start test</a>
+                        </div>
+                    </div>
+
+
+<!-- Accordion (Bootstrap) -->
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="acc1">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">How are the classes going?</button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" aria-labelledby="acc1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Classes can be online or in the classroom. Group and individual formats, homework assignments, and regular progress checks.</div>
+                </div>
+                    </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="acc2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is the size of the groups?</button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" aria-labelledby="acc2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Groups of up to 8 people are the optimal number for language practice.</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                </div> <div class="row justify-content-center mt-5">
+            <div class="col-lg-7">
+                <img src="../assets/teamphoto.png" 
+                     alt="Our team photo" 
+                     class="img-fluid rounded-2 shadow-sm">
+            </div>
+        </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top" style="background-color: #E6D8C3;"> 
+        <div class="col-md-4 d-flex align-items-center"> 
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap"> 
+                <svg class="bi" width="30" height="24" aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                </svg> 
+            </a> 
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2025 LinguaLab. All rights reserved.</span> 
+        </div> 
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
+            <li class="ms-3">
+                <a class="text-body-secondary" href="#" aria-label="Instagram">
+                    <svg class="bi" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+            </li>
+             <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook">
+                <svg class="bi" width="24" height="24">
+                    <use xlink:href="#facebook"></use>
+                </svg>
+            </a>
+        </li> 
+    </ul> 
+</footer>
+
+</body>
+</html>
