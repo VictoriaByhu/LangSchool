@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <header class="sticky-top shadow-sm">
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container-fluid px-3">
+            <a class=" d-flex align-items-center" href="../../uk/mainPage.html">
+                <img src="../../assets/logo.PNG" style="height:150px " alt="LinguaLab" class="rounded-2">
+            </a>
+              <button class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navMenu" 
+                aria-controls="navMenu" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu"> 
+                <ul class="navbar-nav gap-3 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../uk/AboutUs/aboutUs.html">Про нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../uk/Courses/courses.html">Курси</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prices">Деталі та Ціни</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#schedule">Розклад</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Відгуки</a></li>
+                    <li class="nav-item"><button class="btn" data-bs-toggle="modal" data-bs-target="#authModal">Увійти</button></li>
+                    <li class="nav-item"><button class="btn" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватись</button></li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="../../Courses/details.html">ENG</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-5 fw-bold mb-4 text-center">Деталі курсу</h1>
+                    
+                    <div class="accordion" id="courseAccordion">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Англійська (A1-B2)
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Комплексні програми для всіх рівнів. Оволодійте основами на рівні A1, розвивайте впевненість на рівні B1 або вдосконалюйте вільне володіння мовою на рівні B2.</p>
+                                    
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Тривалість:</strong> 8-10 тижнів на рівень</li>
+                                        <li class="list-group-item"><strong>Формат:</strong> Онлайн група та особисто</li>
+                                        <li class="list-group-item"><strong>Ціна:</strong> Від 8400 грн</li>
+                                    </ul>
+                                    
+                                    <h3 class="h5">Чого ви навчитеся:</h3>
+                                    <ul class="list-unstyled d-flex flex-column gap-2 checkmark-list">
+                                        <li>Основні правила граматики та словниковий запас.</li>
+                                        <li>Розвивайте впевненість у реальних розмовах.</li>
+                                        <li>Покращуйте свої навички аудіювання, читання та письма.</li>
+                                    </ul>
+                                    <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватися зараз</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Англійська — розмовний клуб
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Покращуйте свої розмовні навички в невеликих групах з носієм мови. Це не урок граматики; це 100% розмовна практика.</p>
+
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Тривалість:</strong> 4-тижневі блоки (постійно)</li>
+                                        <li class="list-group-item"><strong>Формат:</strong> Онлайн-група (максимум 6 осіб)</li>
+                                        <li class="list-group-item"><strong>Ціна:</strong> 3300 грн / 4 тижні</li>
+                                    </ul>
+
+                                    <h3 class="h5">Що ви будете практикувати:</h3>
+                                    <ul class="list-unstyled d-flex flex-column gap-2 checkmark-list">
+                                        <li>Реальні сценарії (дебати, подорожі тощо)</li>
+                                        <li>Плавність, природна вимова та інтонація.</li>
+                                        <li>Здобуття впевненості у виступі без страху помилок.</li>
+                                    </ul>
+                                    <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Приєднатися до клубу</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Підготовка до IELTS
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Спеціалізований курс з практикою всіх аспектів ідей та таймінгу.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Іспанська (A1-B2)
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Від простих вітань до складних розмов. Ми пропонуємо повний шлях до вільного володіння іспанською мовою, зосереджуючись на реальних ситуаціях.</p>
+                                    
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Тривалість:</strong> 8-10 тижнів на рівень</li>
+                                        <li class="list-group-item"><strong>Формат:</strong> Онлайн група та особисто</li>
+                                        <li class="list-group-item"><strong>Ціна:</strong> Від 8400 грн</li>
+                                    </ul>
+                                    
+                                    <h3 class="h5">Чого ви навчитеся:</h3>
+                                    <ul class="list-unstyled d-flex flex-column gap-2 checkmark-list">
+                                        <li>Master core grammar (Ser vs. Estar).</li>
+                                        <li>Сформуйте сильний словниковий запас для подорожей та повсякденного життя.</li>
+                                        <li>Практикуйте говоріння та слухання з першого дня.</li>
+                                    </ul>
+                                    <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватися зараз</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Іспанська — Розмовний клуб
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Практикуйте свої розмовні навички в невимушеній, дружній атмосфері. Ідеально підходить для рівнів B1+, щоб досягти вільного володіння мовою.</p>
+
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Тривалість:</strong> 4-тижневі блоки (постійно)</li>
+                                        <li class="list-group-item"><strong>Формат:</strong> Онлайн-група (максимум 6 осіб)</li>
+                                        <li class="list-group-item"><strong>Ціна:</strong> 3300 грн / 4 тижні</li>
+                                    </ul>
+
+                                    <h3 class="h5">Що ви будете практикувати:</h3>
+                                    <ul class="list-unstyled d-flex flex-column gap-2 checkmark-list">
+                                        <li>Обговоріть культурні теми та поточні події.</li>
+                                        <li>Покращуйте плавність мовлення та вивчайте поширені ідіоми.</li>
+                                        <li>Набути впевненості, щоб говорити без страху.</li>
+                                    </ul>
+                                    <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Join the Club</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Німецька мова (A1-B2)
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Створіть міцну основу німецької мови. Наші курси проведуть вас від базової граматики (A1) до поглибленого обговорення (B2).</p>
+                                    
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Тривалість:</strong> 10-12 тижнів на рівень</li>
+                                        <li class="list-group-item"><strong>Формат:</strong> Онлайн група та особисто</li>
+                                        <li class="list-group-item"><strong>Ціна:</strong> Від 9000 грн</li>
+                                    </ul>
+                                    
+                                    <h3 class="h5">Чого ви навчитеся:</h3>
+                                    <ul class="list-unstyled d-flex flex-column gap-2 checkmark-list">
+                                        <li>Розуміти німецькі відмінки (Akkusativ, Dativ).</li>
+                                        <li>Збагачуйте словниковий запас для роботи та соціального життя.</li>
+                                        <li>Практикуйте правильну вимову та структуру речень.</li>
+                                    </ul>
+                                    <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватися зараз</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    Німецька — розмовний клуб
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <p class="lead mb-4">Практикуйте свої розмовні навички (Sprechen) у реальних життєвих ситуаціях. Ідеально підходить для рівня B1 і вище, щоб досягти вільного володіння мовою.</p>
+
+                                    <ul class="list-group list-group-flush mb-4">
+                                        <li class="list-group-item"><strong>Тривалість:</strong> 4-тижневі блоки (постійно)</li>
+                                        <li class="list-group-item"><strong>Формат:</strong> Онлайн-група (максимум 6 осіб)</li>
+                                        <li class="list-group-item"><strong>Ціна:</strong> 3300 грн / 4 тижні</li>
+                                    </ul>
+
+                                    <h3 class="h5">Що ви будете практикувати:</h3>
+                                    <ul class="list-unstyled d-flex flex-column gap-2 checkmark-list">
+                                        <li>Здобути впевненість у говорінні.</li>
+                                        <li>Зосередьтеся на темах, пов'язаних з роботою та подорожами.</li>
+                                        <li>Практика з носієм мови.</li>
+                                    </ul>
+                                    <button class="btn btn-accent mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Приєднатися до клубу</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top" style="background-color: #E6D8C3;"> 
+        </footer>
+</body>
+</html>
