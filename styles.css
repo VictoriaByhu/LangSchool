@@ -1,212 +1,275 @@
+/* === 1. ЗМІННІ ТА БАЗОВІ СТИЛІ === */
 :root {
-    /* CSS Custom Properties */
-    --brand-color: #E6D8C3;      /* Світлий бежевий (Фон) */
-    --accent: #5D866C;          /* НОВИЙ Зелений (Акцент) */
-    --accent-dark: #4a6b57;     /* Темніший зелений (для :hover) */
-    --text-color: #333;
+    /* === НОВА ПАЛІТРА === */
+    --primary-color: #2B3A4A;      /* Головний (Темний Індиго) */
+    --primary-light: #4A5C6F;    /* Світліший індиго (для :hover) */
+    --accent-color: #00C9A7;      /* Акцент (Яскраво-бірюзовий) */
+    --accent-dark: #00A188;       /* Темніший бірюзовий (для :hover) */
+    --star-color: #FFC107;       /* Золотий (Тільки для зірок) */
+
+    /* База */
+    --text-color: #212529;      /* Темний текст */
+    --text-color-light: #F8F9FA; /* Світлий текст (на темному фоні) */
     --muted: #6c757d;
-    --card-bg: #fff;
+    
+    /* Фони */
+    --body-bg: #F8F9FA;         /* Світло-сірий фон */
+    --card-bg: #FFFFFF;         /* Білі картки */
+    
     --radius: 12px;
-    --light-creamy-bg: #FDFBF8; 
 }
 
-/* === 1. БАЗОВІ СТИЛІ === */
 body {
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     color: var(--text-color);
-    background: linear-gradient(180deg, var(--light-creamy-bg) 0%, var(--brand-color) 100%);
+    background-color: var(--body-bg); /* <-- Світлий фон */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+/* Новий шрифт для заголовків (ВСТАВТЕ LINK У HTML) */
+h1, h2, h3, h4, h5, .display-5, .display-6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color); /* Заголовки тепер темного кольору індиго */
+}
+
+/* === 2. ЛЕЙАУТ (ХЕДЕР, ФУТЕР) === */
 header {
-    background-color: var(--brand-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--primary-color); /* <-- ТЕМНИЙ ХЕДЕР */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: var(--brand-color);
+    background-color: var(--primary-color); /* <-- ТЕМНИЙ ФУТЕР */
     margin-top: auto;
+    color: var(--text-color-light); /* Світлий текст у футері */
+}
+footer .text-body-secondary {
+    color: rgba(255, 255, 255, 0.7) !important; /* Робимо текст футера світлим */
+}
+footer a.text-body-secondary:hover {
+    color: var(--accent-color) !important; /* Посилання в футері стають бірюзовими */
 }
 
-/* Виправлено: main-content тепер не центрує все по вертикалі */
 .main-content {
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
 }
 
-/* === 2. КНОПКИ === */
-a.btn, button.btn {
-    transition: transform .15s ease, box-shadow .50s ease;
-    padding: 5px 25px;
-    font-size: 1rem;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #ddd;
+/* === 3. ПОСИЛАННЯ ТА КНОПКИ === */
+
+/* Глобальні посилання (тепер бірюзові) */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
 }
 
-/* :hover для звичайних кнопок тепер зелений */
-a.btn:hover, button.btn:hover {
-    transform: translateY(-3px);
-    background-color: var(--accent);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    border: 1px solid var(--accent);
+/* Звичайна кнопка (біла) в хедері (Sign In) */
+.navbar a.btn, .navbar button.btn {
+    color: var(--text-color-light);
+    border-color: var(--text-color-light);
+    background: transparent;
+}
+.navbar a.btn:hover, .navbar button.btn:hover {
+    background-color: var(--text-color-light);
+    color: var(--primary-color);
+    border-color: var(--text-color-light);
 }
 
-/* Головна акцентна кнопка (Sign Up, Join) */
+/* Кнопка "Sign Up" в хедері (яскраво-бірюзова) */
+.navbar .btn-accent-nav {
+    background-color: var(--accent-color);
+    color: var(--primary-color); /* Темний текст на ній */
+    border-color: var(--accent-color);
+    font-weight: 600;
+}
+.navbar .btn-accent-nav:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: var(--primary-color);
+}
+
+/* Головна акцентна кнопка (бірюзова) */
 .btn-accent {
-    background-color: var(--accent);
-    color: #fff;
-    border: 1px solid var(--accent);
-    font-weight: 500;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    font-weight: 600;
     padding: 0.5rem 1rem;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .btn-accent:hover {
-    background-color: var(--accent-dark); /* Використовуємо темніший зелений */
-    color: #fff;
+    background-color: var(--accent-dark);
+    color: var(--primary-color);
     border: 1px solid var(--accent-dark);
 }
 
-/* Кнопки в Hero-секції */
+/* Кнопки в Hero-секції (Головна) */
 .hero .btn-primary {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: white;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: 600;
 }
 .hero .btn-primary:hover {
-    background-color: var(--accent-dark); /* Стає темнішим */
+    background-color: var(--accent-dark);
     border-color: var(--accent-dark);
-    color: white; 
+    color: var(--primary-color); 
 }
 .hero .btn-outline-secondary {
-    color: var(--accent);
-    border-color: var(--accent);
+    color: var(--primary-light);
+    border-color: var(--primary-light);
 }
 .hero .btn-outline-secondary:hover {
-    background-color: var(--accent);
+    background-color: var(--primary-light);
     color: white;
 }
 
-/* === 3. НАВІГАЦІЯ ТА ТАБИ === */
-.nav-link {
-    transition: color .2s ease, transform .2s ease; 
-    border-radius: 5px;
-    color: #333; 
+/* === 4. НАВІГАЦІЯ ТА КОМПОНЕНТИ === */
+
+/* Посилання в хедері (тепер світлі) */
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.8); 
     font-weight: 500;
+    transition: color .2s ease, transform .2s ease;
 }
-.nav-link:hover {
-    color: var(--accent);
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: #FFFFFF; /* Чисто білий */
     transform: scale(1.05);
 }
+.navbar .navbar-toggler-icon {
+     /* Робимо іконку бургера білою */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
 
+/* Таби (Courses, Schedule) */
 .nav-tabs .nav-link {
     color: var(--muted);
-    border-color: var(--brand-color);
+    border-color: #dee2e6;
 }
 .nav-tabs .nav-link.active {
-    color: #333;
-    font-weight: 500;
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: white; /* Робимо текст активного табу білим для контрасту */
+    font-weight: 600;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
 }
 .nav-tabs .nav-link:hover:not(.active) {
     color: #000;
-    border-color: var(--accent);
+    border-color: var(--accent-color);
 }
 
-/* === 4. КАРТКИ === */
-.card {
-    border: 1px solid var(--brand-color);
-    border-radius: var(--radius);
+/* Акордеон (Details) */
+.accordion-item {
+    background-color: var(--card-bg);
+    border: 1px solid #eee;
+}
+.accordion-button {
+    color: var(--text-color);
+    font-weight: 600;
     background-color: var(--card-bg);
 }
+.accordion-button::after {
+    color: var(--accent-color);
+}
+.accordion-button:not(.collapsed) {
+    color: var(--primary-color);
+    background-color: #e6f9f6; /* Дуже світлий бірюзовий */
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .05);
+}
+.accordion-button:not(.collapsed)::after {
+    filter: none; /* Стрілка залишається бірюзовою */
+}
+.accordion-button:focus {
+    box-shadow: 0 0 0 .25rem rgba(0, 201, 167, 0.25); /* Бірюзова тінь */
+    border-color: var(--accent-color);
+}
 
-/* Картки Курсів (на сторінці Courses) */
-.course-card {
-    border: 1px solid var(--brand-color);
+/* === 5. КАРТКИ === */
+
+.card,
+.auth-card,
+.icon-box {
+    border: 1px solid #eee;
     border-radius: var(--radius);
     background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.course-card:hover {
+.card:hover,
+.auth-card:hover,
+.icon-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
-.course-card .card-title {
-    color: var(--accent);
+
+.course-card .card-title,
+.featured-course-card .card-title,
+.auth-card h2,
+.icon-box h3 {
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-}
-.course-card .stretched-link {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-}
-.course-card .stretched-link:hover {
-    color: var(--accent);
 }
 
-/* Картки Курсів (на Головній сторінці) */
-.featured-course-card {
-    border: 1px solid var(--brand-color);
-    border-radius: var(--radius);
-    background-color: var(--card-bg);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.featured-course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-.featured-course-card .card-title {
-    color: var(--accent);
-    font-weight: 600;
-}
+.course-card .stretched-link,
 .featured-course-card .stretched-link {
-    color: #333;
+    color: var(--text-color);
     font-weight: 500;
+    text-decoration: none;
 }
+.course-card .stretched-link:hover,
 .featured-course-card .stretched-link:hover {
-    color: var(--accent);
+    color: var(--accent-color);
 }
 
-/* Картки Відгуків (Feedbacks) */
-.testimonial-card {
-    border: 1px solid var(--brand-color);
-    border-radius: var(--radius);
-    background-color: var(--card-bg);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
 .testimonial-card .blockquote {
     font-size: 1rem;
     font-style: italic;
 }
+
 .testimonial-card .blockquote-footer {
     font-style: normal;
-    color: var(--accent);
+    background-color: var(--primary-color); /* Ваш темний фон (як на скріншоті) */
+    color: var(--text-color-light); /* <--- ВИПРАВЛЕНО: Світлий текст */
+    padding: 0.5rem 1rem; /* Додаємо відступи, щоб було гарно */
+    margin-top: 1rem; /* Відступ від цитати */
+    border-radius: 0.5rem; /* Невелике заокруглення */
+}
+.star-rating {
+    color: var(--star-color); /* Золотий */
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
-/* === 5. СТОРІНКИ АВТОРИЗАЦІЇ (AUTH) === */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* === 6. СТОРІНКИ АВТОРИЗАЦІЇ (AUTH) === */
 .auth-page .main-content {
     justify-content: center;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
 .auth-card {
-    border: 1px solid var(--brand-color);
-    border-radius: var(--radius);
-    background-color: var(--card-bg);
     padding: 1.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
 }
 @media (min-width: 768px) {
     .auth-card {
@@ -219,29 +282,22 @@ a.btn:hover, button.btn:hover {
     font-size: 0.95rem;
 }
 .auth-card .form-text-link a {
-    color: var(--accent);
-    text-decoration: none;
+    color: var(--accent-color);
     font-weight: 500;
 }
-.auth-card .form-text-link a:hover {
-    text-decoration: underline;
-}
 
-/* === 6. ФОРМИ ТА ІНШІ ЕЛЕМЕНТИ === */
+/* === 7. ФОРМИ ТА ІНШІ ЕЛЕМЕНТИ === */
 
-/* Фокус полів вводу тепер зелений */
 .form-control:focus, 
 .form-check-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 .25rem rgba(93, 134, 108, 0.4); /* RGBA для #5D866C */
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 .25rem rgba(0, 201, 167, 0.25);
 }
-/* Чекбокс тепер зелений */
 .form-check-input:checked{
-    background-color: var(--accent);
-    border-color: var(--accent);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
-/* Список з галочками */
 .checkmark-list li {
     position: relative;
     padding-left: 30px;
@@ -251,22 +307,22 @@ a.btn:hover, button.btn:hover {
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--accent); 
+    color: var(--accent-color); 
     font-weight: bold;
 }
 
 /* Таблиця (Schedule) */
 .schedule-table {
-    border-color: var(--brand-color);
+    border-color: #eee;
     margin-top: 1rem;
 }
 .schedule-table thead {
-    background-color: #f8f5f0; 
-    border-bottom: 2px solid var(--brand-color);
+    background-color: var(--body-bg); 
+    border-bottom: 2px solid #dee2e6;
 }
 .schedule-table th {
     font-weight: 600;
-    color: #333;
+    color: var(--text-color);
 }
 .schedule-table td,
 .schedule-table th {
@@ -277,53 +333,7 @@ a.btn:hover, button.btn:hover {
     font-size: 0.9rem;
 }
 
-/* Рейтинг (Feedbacks) */
-.star-rating {
-    color: #FFC107;
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-}
-
 /* Карусель */
 #heroCarousel {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.icon-box {
-    border-color: var(--brand-color) !important; /* Ваша бежева рамка */
-    background-color: var(--card-bg);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.icon-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.icon-circle {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--accent); /* Ваш зелений акцент */
-}
-
-.accordion-button:not(.collapsed)::after {
-    filter: brightness(0) invert(1); /* Зробить стрілку білою на зеленому фоні */
-}
-.accordion-button:focus {
-    box-shadow: 0 0 0 .25rem rgba(93, 134, 108, 0.4); /* Ваша зелена тінь */
-    border-color: var(--accent);
-}
-.accordion-item {
-    border: 1px solid var(--brand-color); /* Бежева рамка для акордеона */
-}
-.accordion-button {
-    color: var(--text-color); /* Колір неактивного тексту */
-    background-color: var(--card-bg); /* Світлий фон */
-}
-.accordion-button::after {
-    color: var(--accent); /* Колір стрілки */
 }
