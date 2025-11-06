@@ -1,29 +1,43 @@
 :root {
     /* CSS Custom Properties */
-    --brand-color: #E6D8C3;
-    --accent: #C2A68C;
+    --brand-color: #E6D8C3;      /* Світлий бежевий (Фон) */
+    --accent: #5D866C;          /* НОВИЙ Зелений (Акцент) */
+    --accent-dark: #4a6b57;     /* Темніший зелений (для :hover) */
+    --text-color: #333;
     --muted: #6c757d;
-    background-color: #F5F5F0;
-    --card-bg: #fbfcff;
+    --card-bg: #fff;
     --radius: 12px;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --light-creamy-bg: #FDFBF8; 
 }
 
+/* === 1. БАЗОВІ СТИЛІ === */
 body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: var(--text-color);
+    background: linear-gradient(180deg, var(--light-creamy-bg) 0%, var(--brand-color) 100%);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
 }
 
+header {
+    background-color: var(--brand-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+    background-color: var(--brand-color);
+    margin-top: auto;
+}
+
+/* Виправлено: main-content тепер не центрує все по вертикалі */
 .main-content {
     flex-grow: 1; 
-    padding: 20px;display: flex;
-    flex-direction: column;    /* Розташовує секції одну під одною */
-    justify-content: center;      
+    display: flex;
+    flex-direction: column;
 }
 
-
+/* === 2. КНОПКИ === */
 a.btn, button.btn {
     transition: transform .15s ease, box-shadow .50s ease;
     padding: 5px 25px;
@@ -34,136 +48,101 @@ a.btn, button.btn {
     border: 1px solid #ddd;
 }
 
+/* :hover для звичайних кнопок тепер зелений */
 a.btn:hover, button.btn:hover {
     transform: translateY(-3px);
-    background-color: #C2A68C;
+    background-color: var(--accent);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
     color: #fff;
-    border: 1px solid #C2A68C;
+    border: 1px solid var(--accent);
 }
 
+/* Головна акцентна кнопка (Sign Up, Join) */
+.btn-accent {
+    background-color: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-dark); /* Використовуємо темніший зелений */
+    color: #fff;
+    border: 1px solid var(--accent-dark);
+}
+
+/* Кнопки в Hero-секції */
+.hero .btn-primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+.hero .btn-primary:hover {
+    background-color: var(--accent-dark); /* Стає темнішим */
+    border-color: var(--accent-dark);
+    color: white; 
+}
+.hero .btn-outline-secondary {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.hero .btn-outline-secondary:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* === 3. НАВІГАЦІЯ ТА ТАБИ === */
 .nav-link {
     transition: color .2s ease, transform .2s ease; 
     border-radius: 5px;
     color: #333; 
     font-weight: 500;
 }
-
 .nav-link:hover {
     color: var(--accent);
     transform: scale(1.05);
 }
 
 .nav-tabs .nav-link {
-    color: var(--muted); /* Сірий для неактивних */
-    border-color: var(--brand-color); /* Бежева рамка */
+    color: var(--muted);
+    border-color: var(--brand-color);
 }
-
 .nav-tabs .nav-link.active {
-    /* Робимо активний таб вашим --accent кольором */
     color: #333;
     font-weight: 500;
     background-color: var(--accent);
     border-color: var(--accent);
+    color: white; /* Робимо текст активного табу білим для контрасту */
 }
-
 .nav-tabs .nav-link:hover:not(.active) {
     color: #000;
     border-color: var(--accent);
 }
 
-header {
-    background-color: var(--brand-color);
-}
-
-.hero .btn-primary {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: white;
-}
-
-.hero .btn-primary:hover {
-    background-color: var(--brand-color); 
-    border-color: var(--brand-color);
-    color: #333; 
-}
-
-.hero .btn-outline-secondary {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.hero .btn-outline-secondary:hover {
-    background-color: var(--accent);
-    color: white;
-}
-
-#heroCarousel {
-    /* Додаємо м'яку, глибоку тінь */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* 1. ВИПРАВЛЕННЯ МАКЕТУ: 
-   (Виправляє баг з минулого разу, коли контент був по центру) */
-.main-content {
-    flex-grow: 1; 
-    display: flex;
-    flex-direction: column;
-    /* Прибираємо 'justify-content: center' */
-    /* padding: 20px;display: flex; <-- ваш старий код був неохайним */
-}
-
-/* 2. НОВІ СТИЛІ ДЛЯ СТОРІНКИ ДЕТАЛЕЙ */
-
-/* Акцентна кнопка (для "Sign Up Now") */
-.btn-accent {
-    background-color: var(--accent);
-    color: #fff;
-    border: 1px solid var(--accent);
-    font-weight: 500;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.btn-accent:hover {
-    background-color: #a98d74; /* Трохи темніший --accent */
-    color: #fff;
-}
-
-/* Стилізований список "What You'll Learn" */
-.checkmark-list li {
-    position: relative;
-    padding-left: 30px; /* Відступ для іконки */
-}
-
-.checkmark-list li::before {
-    content: '\2714'; /* <--- ОНОВЛЕНО. Це CSS-код для галочки */
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--accent); 
-    font-weight: bold;
-}
-.course-card {
-    /* Використовуємо ваші глобальні налаштування */
+/* === 4. КАРТКИ === */
+.card {
     border: 1px solid var(--brand-color);
     border-radius: var(--radius);
     background-color: var(--card-bg);
-    /* Додаємо тінь та анімацію */
+}
+
+/* Картки Курсів (на сторінці Courses) */
+.course-card {
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .course-card:hover {
-    transform: translateY(-5px); /* Ефект "підйому" */
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
-
 .course-card .card-title {
-    /* Робимо заголовок картки акцентним */
     color: var(--accent);
     font-weight: 600;
 }
-
-/* 4. Покращуємо посилання в картці */
 .course-card .stretched-link {
     color: #333;
     text-decoration: none;
@@ -171,4 +150,141 @@ header {
 }
 .course-card .stretched-link:hover {
     color: var(--accent);
+}
+
+/* Картки Курсів (на Головній сторінці) */
+.featured-course-card {
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.featured-course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.featured-course-card .card-title {
+    color: var(--accent);
+    font-weight: 600;
+}
+.featured-course-card .stretched-link {
+    color: #333;
+    font-weight: 500;
+}
+.featured-course-card .stretched-link:hover {
+    color: var(--accent);
+}
+
+/* Картки Відгуків (Feedbacks) */
+.testimonial-card {
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.testimonial-card .blockquote {
+    font-size: 1rem;
+    font-style: italic;
+}
+.testimonial-card .blockquote-footer {
+    font-style: normal;
+    color: var(--accent);
+}
+
+/* === 5. СТОРІНКИ АВТОРИЗАЦІЇ (AUTH) === */
+.auth-page .main-content {
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.auth-card {
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+@media (min-width: 768px) {
+    .auth-card {
+        padding: 2.5rem;
+    }
+}
+.auth-card .form-text-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+.auth-card .form-text-link a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+.auth-card .form-text-link a:hover {
+    text-decoration: underline;
+}
+
+/* === 6. ФОРМИ ТА ІНШІ ЕЛЕМЕНТИ === */
+
+/* Фокус полів вводу тепер зелений */
+.form-control:focus, 
+.form-check-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 .25rem rgba(93, 134, 108, 0.4); /* RGBA для #5D866C */
+}
+/* Чекбокс тепер зелений */
+.form-check-input:checked{
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Список з галочками */
+.checkmark-list li {
+    position: relative;
+    padding-left: 30px;
+}
+.checkmark-list li::before {
+    content: '\2714';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent); 
+    font-weight: bold;
+}
+
+/* Таблиця (Schedule) */
+.schedule-table {
+    border-color: var(--brand-color);
+    margin-top: 1rem;
+}
+.schedule-table thead {
+    background-color: #f8f5f0; 
+    border-bottom: 2px solid var(--brand-color);
+}
+.schedule-table th {
+    font-weight: 600;
+    color: #333;
+}
+.schedule-table td,
+.schedule-table th {
+    vertical-align: middle;
+}
+.schedule-table .btn-accent {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Рейтинг (Feedbacks) */
+.star-rating {
+    color: #FFC107;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Карусель */
+#heroCarousel {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
