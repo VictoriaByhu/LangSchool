@@ -288,3 +288,42 @@ a.btn:hover, button.btn:hover {
 #heroCarousel {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
+.icon-box {
+    border-color: var(--brand-color) !important; /* Ваша бежева рамка */
+    background-color: var(--card-bg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent); /* Ваш зелений акцент */
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1); /* Зробить стрілку білою на зеленому фоні */
+}
+.accordion-button:focus {
+    box-shadow: 0 0 0 .25rem rgba(93, 134, 108, 0.4); /* Ваша зелена тінь */
+    border-color: var(--accent);
+}
+.accordion-item {
+    border: 1px solid var(--brand-color); /* Бежева рамка для акордеона */
+}
+.accordion-button {
+    color: var(--text-color); /* Колір неактивного тексту */
+    background-color: var(--card-bg); /* Світлий фон */
+}
+.accordion-button::after {
+    color: var(--accent); /* Колір стрілки */
+}
