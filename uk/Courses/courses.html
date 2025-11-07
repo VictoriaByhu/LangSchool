@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="../../styles.css">
+
+    <link rel="icon" type="image/png" href="../../assets/logo.PNG">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
-
     <header class="sticky-top shadow-sm">
         <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container px-3">
             <a class=" d-flex align-items-center" href="../mainPage.html">
                 <img src="../../assets/logo.PNG" style="height:125px " alt="LinguaLab" class="rounded-2">
-
             </a>
 
             <button class="navbar-toggler" 
@@ -33,155 +33,162 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navMenu"> 
-        <ul class="navbar-nav gap-3 mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="../AboutUs/aboutUs.html">Про нас</a></li>
-            <li class="nav-item"><a class="nav-link" href="#courses">Курси</a></li>
-            <li class="nav-item"><a class="nav-link" href="./details.html">Деталі та Ціни</a></li>
-            <li class="nav-item"><a class="nav-link" href="../Schedule/schedule.html">Розклад</a></li>
-            <li class="nav-item"><a class="nav-link" href="../Feedbacks/feedbacks.html">Відгуки</a></li>
-            <li class="nav-item"><a class="btn" href="../Auth/signin.html">Увійти</a></li>
-            <li class="nav-item"><a class="btn" href="../Auth/signup.html">Зареєструватись</a></li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold" href="../../Courses/courses.html">ENG</a>
-            </li>
-        </ul>
-    </div>
+                <ul class="navbar-nav gap-3 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../AboutUs/aboutUs.html">Про нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Курси</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./details.html">Деталі та Ціни</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Schedule/schedule.html">Розклад</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Feedbacks/feedbacks.html">Відгуки</a></li>
+                    <li class="nav-item"><a class="btn" href="../Auth/signin.html">Увійти</a></li>
+                    <li class="nav-item"><a class="btn" href="../Auth/signup.html">Зареєструватись</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="../../Courses/courses.html">ENG</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main class="main-content">
         <section id="courses" class="py-5">
-    <div class="container">
-        <h2>Наші курси</h2>
-        <p class="mb-4">Ми пропонуємо курси для різних рівнів та вікових груп.</p>
+            <div class="container">
+                <h2>Наші курси</h2>
+                <p class="mb-4">Ми пропонуємо курси для різних рівнів та вікових груп.</p>
 
-        <ul class="nav nav-tabs" id="coursesTab" role="tablist">
-            <li class="nav-item" role="presentation"><button class="nav-link active" id="eng-tab" data-bs-toggle="tab" data-bs-target="#eng" type="button" role="tab" aria-controls="eng" aria-selected="true">Англійська</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" id="esp-tab" data-bs-toggle="tab" data-bs-target="#esp" type="button" role="tab" aria-controls="esp" aria-selected="false">Іспанська</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" id="ger-tab" data-bs-toggle="tab" data-bs-target="#ger" type="button" role="tab" aria-controls="ger" aria-selected="false">Німецька</button></li>
-        </ul>
-        <div class="tab-content mt-3" id="coursesTabContent">
-            
-            <div class="tab-pane fade show active" id="eng" role="tabpanel" aria-labelledby="eng-tab">
-                <div class="row gy-3">
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Англійська (A1-B2)</h5>
-                                <p class="card-text">Комплексні програми для всіх рівнів. Оволодійте основами на рівні A1, розвивайте впевненість на рівні B1 або вдосконалюйте вільне володіння мовою на рівні B2.</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                <ul class="nav nav-tabs" id="coursesTab" role="tablist">
+                    <li class="nav-item" role="presentation"><button class="nav-link active" id="eng-tab" data-bs-toggle="tab" data-bs-target="#eng" type="button" role="tab" aria-controls="eng" aria-selected="true">Англійська</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="esp-tab" data-bs-toggle="tab" data-bs-target="#esp" type="button" role="tab" aria-controls="esp" aria-selected="false">Іспанська</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="ger-tab" data-bs-toggle="tab" data-bs-target="#ger" type="button" role="tab" aria-controls="ger" aria-selected="false">Німецька</button></li>
+                </ul>
+                
+                <div class="tab-content mt-3" id="coursesTabContent">
+                    <div class="tab-pane fade show active" id="eng" role="tabpanel" aria-labelledby="eng-tab">
+                        <div class="row gy-3">
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Англійська (A1-B2)</h5>
+                                        <p class="card-text">Комплексні програми для всіх рівнів. Оволодійте основами на рівні A1, розвивайте впевненість на рівні B1 або вдосконалюйте вільне володіння мовою на рівні B2.</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
                             </div>
-                        </article>
+
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Англійська — розмовний клуб</h5>
+                                        <p class="card-text">Покращуйте свої розмовні навички в невеликих групах з носієм мови.</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Підготовка до IELTS</h5>
+                                        <p class="card-text">Спеціалізований курс з практикою всіх аспектів ідей та таймінгу.</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Англійська — розмовний клуб</h5>
-                                <p class="card-text">Покращуйте свої розмовні навички в невеликих групах з носієм мови.</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+
+                    <div class="tab-pane fade" id="esp" role="tabpanel" aria-labelledby="esp-tab">
+                        <div class="row gy-3">
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Іспанська (A1-B2)</h5>
+                                        <p class="card-text">Від простих вітань до складних розмов. Ми пропонуємо повний шлях до вільного володіння іспанською мовою, зосереджуючись на реальних ситуаціях.</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
                             </div>
-                        </article>
+
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Іспанська — Розмовний клуб</h5>
+                                        <p class="card-text">Практикуйте свої навички іспанської мови у невимушеній, дружній атмосфері.</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Підготовка до IELTS</h5>
-                                <p class="card-text">Спеціалізований курс з практикою всіх аспектів ідей та таймінгу.</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+
+                    <div class="tab-pane fade" id="ger" role="tabpanel" aria-labelledby="ger-tab">
+                        <div class="row gy-3">
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Німецька (A1-B2)</h5>
+                                        <p class="card-text">Побудуйте міцний фундамент у німецькій. Наші курси проведуть вас від базової граматики (A1) до просунутої дискусії (B2).</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
                             </div>
-                        </article>
+
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 course-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Німецька — Розмовний клуб</h5>
+                                        <p class="card-text">Практикуйте свої навички мовлення (Sprechen) у реальних сценаріях. Ідеально для рівня B1 та вище.</p>
+                                        <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="tab-pane fade" id="esp" role="tabpanel" aria-labelledby="esp-tab">
-                <div class="row gy-3">
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Іспанська (A1-B2)</h5>
-                                <p class="card-text">Від простих вітань до складних розмов. Ми пропонуємо повний шлях до вільного володіння іспанською мовою, зосереджуючись на реальних ситуаціях.</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+            <div class="container mt-5 py-5 border-top" style="border-color: var(--brand-color) !important;">
+                <div class="text-center mb-5">
+                    <h2 class="display-6 fw-bold">Що включено у кожен курс?</h2>
+                    <p class="lead">Ми надаємо повну підтримку на вашому шляху до вільного володіння мовою.</p>
+                </div>
+
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 border rounded-3 h-100">
+                            <div class="icon-circle bg-accent text-white mb-3 mx-auto">
+                                <i class="bi bi-person-check-fill" style="font-size: 2rem;"></i> 
                             </div>
-                        </article>
+
+                            <h3 class="h5 fw-bold">Сертифіковані викладачі</h3>
+                            <p>Навчайтеся у професіоналів з міжнародним досвідом.</p>
+                        </div>
                     </div>
-                     <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Іспанська — Розмовний клуб</h5>
-                                <p class="card-text">Практикуйте свої навички іспанської мови у невимушеній, дружній атмосфері.</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 border rounded-3 h-100">
+                            <div class="icon-circle bg-accent text-white mb-3 mx-auto">
+                                <i class="bi bi-chat-dots-fill" style="font-size: 2rem;"></i>
                             </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
 
-            <div class="tab-pane fade" id="ger" role="tabpanel" aria-labelledby="ger-tab">
-                <div class="row gy-3">
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Німецька (A1-B2)</h5>
-                                <p class="card-text">Побудуйте міцний фундамент у німецькій. Наші курси проведуть вас від базової граматики (A1) до просунутої дискусії (B2).</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
+                            <h3 class="h5 fw-bold">Практика мовлення</h3>
+                            <p>Акцент на розмовних навичках з першого ж заняття.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="icon-box p-4 border rounded-3 h-100">
+                            <div class="icon-circle bg-accent text-white mb-3 mx-auto">
+                                <i class="bi bi-book-half" style="font-size: 2rem;"></i>
                             </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card h-100 course-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Німецька — Розмовний клуб</h5>
-                                <p class="card-text">Практикуйте свої навички мовлення (Sprechen) у реальних сценаріях. Ідеально для рівня B1 та вище.</p>
-                                <a href="../Courses/details.html" class="stretched-link">Деталі курсу</a>
-                            </div>
-                        </article>
+                            
+                            <h3 class="h5 fw-bold">Сучасні матеріали</h3>
+                            <p>Усі необхідні підручники та інтерактивні завдання включені у вартість.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    </div>
-
-
-    <div class="container mt-5 py-5 border-top" style="border-color: var(--brand-color) !important;">
-        <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold">Що включено у кожен курс?</h2>
-            <p class="lead">Ми надаємо повну підтримку на вашому шляху до вільного володіння мовою.</p>
-        </div>
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="icon-box p-4 border rounded-3 h-100">
-                    <div class="icon-circle bg-accent text-white mb-3 mx-auto">
-                        <i class="bi bi-person-check-fill" style="font-size: 2rem;"></i> 
-                    </div>
-                    <h3 class="h5 fw-bold">Сертифіковані викладачі</h3>
-                    <p>Навчайтеся у професіоналів з міжнародним досвідом.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="icon-box p-4 border rounded-3 h-100">
-                    <div class="icon-circle bg-accent text-white mb-3 mx-auto">
-                        <i class="bi bi-chat-dots-fill" style="font-size: 2rem;"></i>
-                    </div>
-                    <h3 class="h5 fw-bold">Практика мовлення</h3>
-                    <p>Акцент на розмовних навичках з першого ж заняття.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="icon-box p-4 border rounded-3 h-100">
-                    <div class="icon-circle bg-accent text-white mb-3 mx-auto">
-                        <i class="bi bi-book-half" style="font-size: 2rem;"></i>
-                    </div>
-                    <h3 class="h5 fw-bold">Сучасні матеріали</h3>
-                    <p>Усі необхідні підручники та інтерактивні завдання включені у вартість.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
+        </section>
     </main>
     
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top"> 
@@ -193,21 +200,6 @@
                 </a> 
                 <span class="mb-3 mb-md-0 text-body-secondary">© 2025 LinguaLab. All rights reserved.</span> 
             </div> 
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
-                <li class="ms-3">
-                    <a class="text-body-secondary" href="#" aria-label="Instagram">
-                        <svg class="bi" width="24" height="24" aria-hidden="true">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook">
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#facebook"></use>
-                    </svg>
-                </a>
-            </li> 
-        </ul> 
     </footer>
 </body>
 </html>

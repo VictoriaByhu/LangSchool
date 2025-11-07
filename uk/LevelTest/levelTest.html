@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на визначення рівня - LinguaLab</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header class="sticky-top shadow-sm">
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container px-3">
+            <a class=" d-flex align-items-center" href="../mainPage.html">
+                <img src="../../assets/logo.PNG" style="height: 125px;" alt="LinguaLab" class="rounded-2">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navMenu"> 
+                <ul class="navbar-nav gap-3 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../AboutUs/aboutUs.html">Про нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Courses/courses.html">Курси</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Courses/details.html">Деталі та Ціни</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Schedule/schedule.html">Розклад</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Feedbacks/feedbacks.html">Відгуки</a></li>
+                    <li class="nav-item"><a class="btn" href="../Auth/signin.html">Увійти</a></li>
+                    <li class="nav-item"><a class="btn btn-accent-nav" href="../Auth/signup.html">Зареєструватись</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="../../LevelTest/levelTest.html">ENG</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-5 fw-bold mb-3 text-center">Тест на визначення рівня</h1>
+                        <p class="lead text-center mb-5">Оберіть мову, щоб розпочати тест. Питання поступово ускладнюються. Не вгадуйте – якщо не знаєте відповіді, пропустіть питання.</p>
+
+                        <ul class="nav nav-tabs nav-fill" id="langTestTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="eng-tab" data-bs-toggle="tab" data-bs-target="#test-en-pane" type="button" role="tab" aria-controls="test-en-pane" aria-selected="true">Англійська</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="es-tab" data-bs-toggle="tab" data-bs-target="#test-es-pane" type="button" role="tab" aria-controls="test-es-pane" aria-selected="false">Іспанська</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="de-tab" data-bs-toggle="tab" data-bs-target="#test-de-pane" type="button" role="tab" aria-controls="test-de-pane" aria-selected="false">Німецька</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content pt-4" id="langTestTabContent">
+                            <div class="tab-pane fade show active" id="test-en-pane" role="tabpanel" aria-labelledby="eng-tab" tabindex="0">
+                                <form id="levelTestForm-en">
+                                    <div class="card card-body mb-3"><p class="fw-bold">1. ___ are you from?</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q1-en" id="q1a-en"><label class="form-check-label" for="q1a-en">a) What</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q1-en" id="q1b-en"><label class="form-check-label" for="q1b-en">b) Where</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q1-en" id="q1c-en"><label class="form-check-label" for="q1c-en">c) Who</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">2. She ___ TV every evening.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q2-en" id="q2a-en"><label class="form-check-label" for="q2a-en">a) watch</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q2-en" id="q2b-en"><label class="form-check-label" for="q2b-en">b) watches</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q2-en" id="q2c-en"><label class="form-check-label" for="q2c-en">c) watching</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">3. Did you ___ the new film last night?</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q3-en" id="q3a-en"><label class="form-check-label" for="q3a-en">a) see</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q3-en" id="q3b-en"><label class="form-check-label" for="q3b-en">b) saw</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q3-en" id="q3c-en"><label class="form-check-label" for="q3c-en">c) seen</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">4. I haven't finished my homework ___.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q4-en" id="q4a-en"><label class="form-check-label" for="q4a-en">a) already</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q4-en" id="q4b-en"><label class="form-check-label" for="q4b-en">b) still</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q4-en" id="q4c-en"><label class="form-check-label" for="q4c-en">c) yet</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">5. You ___ smoke in here. It's forbidden.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q5-en" id="q5a-en"><label class="form-check-label" for="q5a-en">a) don't have to</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q5-en" id="q5b-en"><label class="form-check-label" for="q5b-en">b) mustn't</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q5-en" id="q5c-en"><label class="form-check-label" for="q5c-en">c) needn't</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">6. If I had known you were coming, I ___ a cake.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q6-en" id="q6a-en"><label class="form-check-label" for="q6a-en">a) would bake</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q6-en" id="q6b-en"><label class="form-check-label" for="q6b-en">b) baked</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q6-en" id="q6c-en"><label class="form-check-label" for="q6c-en">c) would have baked</label></div>
+                                    </div>
+
+                                     <div class="card card-body mb-3"><p class="fw-bold">7. He can't ___ living in such a noisy city.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q7-en" id="q7a-en"><label class="form-check-label" for="q7a-en">a) used to</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q7-en" id="q7b-en"><label class="form-check-label" for="q7b-en">b) get used to</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q7-en" id="q7c-en"><label class="form-check-label" for="q7c-en">c) be used to</label></div>
+                                    </div>
+
+                                     <div class="card card-body mb-3"><p class="fw-bold">8. By the time the police arrived, the thief ___.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q8-en" id="q8a-en"><label class="form-check-label" for="q8a-en">a) had disappeared</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q8-en" id="q8b-en"><label class="form-check-label" for="q8b-en">b) disappeared</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q8-en" id="q8c-en"><label class="form-check-label" for="q8c-en">c) was disappearing</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">9. Not only ___ sing, but she also plays the piano.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q9-en" id="q9a-en"><label class="form-check-label" for="q9a-en">a) she can</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q9-en" id="q9b-en"><label class="form-check-label" for="q9b-en">b) can she</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q9-en" id="q9c-en"><label class="form-check-label" for="q9c-en">c) she could</label></div>
+                                    </div>
+
+                                    <div class="card card-body mb-3"><p class="fw-bold">10. I wish I ___ more time to travel.</p>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q10-en" id="q10a-en"><label class="form-check-label" for="q10a-en">a) have</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q10-en" id="q10b-en"><label class="form-check-label" for="q10b-en">b) had</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="radio" name="q10-en" id="q10c-en"><label class="form-check-label" for="q10c-en">c) will have</label></div>
+                                    </div>
+                                </form>
+
+                                <button class="btn btn-accent w-100 mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#answers-en" aria-expanded="false" aria-controls="answers-en">
+                                    Перевірити (Англійська)
+                                </button>
+
+                                <div class="collapse mt-4" id="answers-en">
+                                    <div class="card card-body test-answers">
+                                        <div id="result-display-en"></div>
+                                            <h3 class="h4 mt-4">Ключ до тесту (Англійська):</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. b) Where</li>
+                                                <li class="list-group-item">2. b) watches</li>
+                                                <li class="list-group-item">3. a) see</li>
+                                                <li class="list-group-item">4. c) yet</li>
+                                                <li class="list-group-item">5. b) mustn't</li>
+                                                <li class="list-group-item">6. c) would have baked</li>
+                                                <li class="list-group-item">7. b) get used to</li>
+                                                <li class="list-group-item">8. a) had disappeared</li>
+                                                <li class="list-group-item">9. b) can she</li>
+                                                <li class="list-group-item">10. b) had</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="test-es-pane" role="tabpanel" aria-labelledby="es-tab" tabindex="0">
+                                    <form id="levelTestForm-es">
+                                        <div class="card card-body mb-3"><p class="fw-bold">1. ¿Cómo te ___?</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q1-es" id="q1a-es"><label class="form-check-label" for="q1a-es">a) llamo</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q1-es" id="q1b-es"><label class="form-check-label" for="q1b-es">b) llamas</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q1-es" id="q1c-es"><label class="form-check-label" for="q1c-es">c) llama</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">2. Yo ___ 30 años.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q2-es" id="q2a-es"><label class="form-check-label" for="q2a-es">a) tengo</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q2-es" id="q2b-es"><label class="form-check-label" for="q2b-es">b) soy</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q2-es" id="q2c-es"><label class="form-check-label" for="q2c-es">c) estoy</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">3. Ayer, yo ___ al mercado.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q3-es" id="q3a-es"><label class="form-check-label" for="q3a-es">a) fui</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q3-es" id="q3b-es"><label class="form-check-label" for="q3b-es">b) iba</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q3-es" id="q3c-es"><label class="form-check-label" for="q3c-es">c) he ido</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">4. Me ___ los libros.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q4-es" id="q4a-es"><label class="form-check-label" for="q4a-es">a) gusta</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q4-es" id="q4b-es"><label class="form-check-label" for="q4b-es">b) gusto</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q4-es" id="q4c-es"><label class="form-check-label" for="q4c-es">c) gustan</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">5. Si ___ tiempo, iría contigo.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q5-es" id="q5a-es"><label class="form-check-label" for="q5a-es">a) tengo</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q5-es" id="q5b-es"><label class="form-check-label" for="q5b-es">b) tuviera</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q5-es" id="q5c-es"><label class="form-check-label" for="q5c-es">c) tendré</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">6. Estaba comiendo ___ sonó el teléfono.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q6-es" id="q6a-es"><label class="form-check-label" for="q6a-es">a) cuando</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q6-es" id="q6b-es"><label class="form-check-label" for="q6b-es">b) mientras</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q6-es" id="q6c-es"><label class="form-check-label" for="q6c-es">c) que</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">7. No creo que ___ la respuesta.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q7-es" id="q7a-es"><label class="form-check-label" for="q7a-es">a) sabe</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q7-es" id="q7b-es"><label class="form-check-label" for="q7b-es">b) sabrá</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q7-es" id="q7c-es"><label class="form-check-label" for="q7c-es">c) sepa</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">8. La casa fue ___ por el arquitecto.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q8-es" id="q8a-es"><label class="form-check-label" for="q8a-es">a) diseñada</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q8-es" id="q8b-es"><label class="form-check-label" for="q8b-es">b) diseñado</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q8-es" id="q8c-es"><label class="form-check-label" for="q8c-es">c) diseñar</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">9. ___ sido por tu ayuda, no lo habría logrado.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q9-es" id="q9a-es"><label class="form-check-label" for="q9a-es">a) A no ser</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q9-es" id="q9b-es"><label class="form-check-label" for="q9b-es">b) De no haber</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q9-es" id="q9c-es"><label class="form-check-label" for="q9c-es">c) Si no</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">10. Me molesta que ___ tanto ruido.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q10-es" id="q10a-es"><label class="form-check-label" for="q10a-es">a) hagas</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q10-es" id="q10b-es"><label class="form-check-label" for="q10b-es">b) haces</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q10-es" id="q10c-es"><label class="form-check-label" for="q10c-es">c) hacer</label></div>
+                                        </div>
+                                    </form>
+
+                                    <button class="btn btn-accent w-100 mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#answers-es" aria-expanded="false" aria-controls="answers-es">
+                                        Перевірити (Іспанська)
+                                    </button>
+
+                                    <div class="collapse mt-4" id="answers-es">
+                                        <div class="card card-body test-answers">
+                                            <div id="result-display-es"></div>
+                                            <h3 class="h4 mt-4">Ключ до тесту (Іспанська):</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. b) llamas</li>
+                                                <li class="list-group-item">2. a) tengo</li>
+                                                <li class="list-group-item">3. a) fui</li>
+                                                <li class="list-group-item">4. c) gustan</li>
+                                                <li class="list-group-item">5. b) tuviera</li>
+                                                <li class="list-group-item">6. a) cuando</li>
+                                                <li class="list-group-item">7. c) sepa</li>
+                                                <li class="list-group-item">8. a) diseñada</li>
+                                                <li class="list-group-item">9. b) De no haber</li>
+                                                <li class="list-group-item">10. a) hagas</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="test-de-pane" role="tabpanel" aria-labelledby="de-tab" tabindex="0">
+                                    <form id="levelTestForm-de">
+                                        <div class="card card-body mb-3"><p class="fw-bold">1. Wie ___ Sie?</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q1-de" id="q1a-de"><label class="form-check-label" for="q1a-de">a) heißen</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q1-de" id="q1b-de"><label class="form-check-label" for="q1b-de">b) heißt</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q1-de" id="q1c-de"><label class="form-check-label" for="q1c-de">c) heiße</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">2. Ich ___ aus Deutschland.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q2-de" id="q2a-de"><label class="form-check-label" for="q2a-de">a) bin</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q2-de" id="q2b-de"><label class="form-check-label" for="q2b-de">b) habe</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q2-de" id="q2c-de"><label class="form-check-label" for="q2c-de">c) komme</label></div>
+                                        </div>
+                                            
+                                        <div class="card card-body mb-3"><p class="fw-bold">3. Ich habe einen Apfel ___.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q3-de" id="q3a-de"><label class="form-check-label" for="q3a-de">a) esse</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q3-de" id="q3b-de"><label class="form-check-label" for="q3b-de">b) gegessen</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q3-de" id="q3c-de"><label class="form-check-label" for="q3c-de">c) isst</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">4. Er geht ins Kino, ___ er den Film sehen will.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q4-de" id="q4a-de"><label class="form-check-label" for="q4a-de">a) weil</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q4-de" id="q4b-de"><label class="form-check-label" for="q4b-de">b) aber</m></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q4-de" id="q4c-de"><label class="form-check-label" for="q4c-de">c) oder</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">5. ___ du gestern Abend gemacht?</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q5-de" id="q5a-de"><label class="form-check-label" for="q5a-de">a) Was</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q5-de" id="q5b-de"><label class="form-check-label" for="q5b-de">b) Was hast</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q5-de" id="q5c-de"><label class="form-check-label" for="q5c-de">c) Was bist</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">6. Ich würde gern ___, wenn ich mehr Geld hätte.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q6-de" id="q6a-de"><label class="form-check-label" for="q6a-de">a) reise</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q6-de" id="q6b-de"><label class="form-check-label" for="q6b-de">b) gereist</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q6-de" id="q6c-de"><label class="form-check-label" for="q6c-de">c) reisen</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">7. Nachdem er gegessen ___, ging er schlafen.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q7-de" id="q7a-de"><label class="form-check-label" for="q7a-de">a) hatte</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q7-de" id="q7b-de"><label class="form-check-label" for="q7b-de">b) hat</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q7-de" id="q7c-de"><label class="form-check-label" for="q7c-de">c) hätte</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">8. Es ist wichtig, ___ man die Regeln kennt.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q8-de" id="q8a-de"><label class="form-check-label" for="q8a-de">a) ob</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q8-de" id="q8b-de"><label class="form-check-label" for="q8b-de">b) dass</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q8-de" id="q8c-de"><label class="form-check-label" for="q8c-de">c) wenn</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">9. ___ ich jung war, spielte ich oft Fußball.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q9-de" id="q9a-de"><label class="form-check-label" for="q9a-de">a) Wenn</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q9-de" id="q9b-de"><label class="form-check-label" for="q9b-de">b) Ob</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q9-de" id="q9c-de"><label class="form-check-label" for="q9c-de">c) Als</label></div>
+                                        </div>
+
+                                        <div class="card card-body mb-3"><p class="fw-bold">10. Er spricht, ___ er alles wüsste.</p>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q10-de" id="q10a-de"><label class="form-check-label" for="q10a-de">a) als ob</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q10-de" id="q10b-de"><label class="form-check-label" for="q10b-de">b) wie</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="radio" name="q10-de" id="q10c-de"><label class="form-check-label" for="q10c-de">c) wenn</label></div>
+                                        </div>
+                                    </form>
+
+                                    <button class="btn btn-accent w-100 mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#answers-de" aria-expanded="false" aria-controls="answers-de">
+                                        Перевірити (Німецька)
+                                    </button>
+
+                                    <div class="collapse mt-4" id="answers-de">
+                                        <div class="card card-body test-answers">
+                                            <div id="result-display-de"></div>
+                                            <h3 class="h4 mt-4">Ключ до тесту (Німецька):</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. a) heißen</li>
+                                                <li class="list-group-item">2. c) komme</li>
+                                                <li class="list-group-item">3. b) gegessen</li>
+                                                <li class="list-group-item">4. a) weil</li>
+                                                <li class="list-group-item">5. b) Was hast</li>
+                                                <li class="list-group-item">6. c) reisen</li>
+                                                <li class="list-group-item">7. a) hatte</li>
+                                                <li class="list-group-item">8. b) dass</li>
+                                                <li class="list-group-item">9. c) Als</li>
+                                                <li class="list-group-item">10. a) als ob</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // === 1. АНГЛІЙСЬКА ===
+            const answersBlockEN = document.getElementById('answers-en');
+            answersBlockEN.addEventListener('show.bs.collapse', function () {
+                const correctAnswers = {
+                    'q1-en': 'q1b-en', 'q2-en': 'q2b-en', 'q3-en': 'q3a-en', 'q4-en': 'q4c-en', 'q5-en': 'q5b-en',
+                    'q6-en': 'q6c-en', 'q7-en': 'q7b-en', 'q8-en': 'q8a-en', 'q9-en': 'q9b-en', 'q10-en': 'q10b-en'
+                };
+                const form = document.getElementById('levelTestForm-en');
+                const resultDisplay = document.getElementById('result-display-en');
+                calculateAndDisplayResult(form, correctAnswers, resultDisplay);
+            });
+
+            // === 2. ІСПАНСЬКА ===
+            const answersBlockES = document.getElementById('answers-es');
+            answersBlockES.addEventListener('show.bs.collapse', function () {
+                const correctAnswers = {
+                    'q1-es': 'q1b-es', 'q2-es': 'q2a-es', 'q3-es': 'q3a-es', 'q4-es': 'q4c-es', 'q5-es': 'q5b-es',
+                    'q6-es': 'q6a-es', 'q7-es': 'q7c-es', 'q8-es': 'q8a-es', 'q9-es': 'q9b-es', 'q10-es': 'q10a-es'
+                };
+                const form = document.getElementById('levelTestForm-es');
+                const resultDisplay = document.getElementById('result-display-es');
+                calculateAndDisplayResult(form, correctAnswers, resultDisplay);
+            });
+
+            // === 3. НІМЕЦЬКА ===
+            const answersBlockDE = document.getElementById('answers-de');
+            answersBlockDE.addEventListener('show.bs.collapse', function () {
+                const correctAnswers = {
+                    'q1-de': 'q1a-de', 'q2-de': 'q2c-de', 'q3-de': 'q3b-de', 'q4-de': 'q4a-de', 'q5-de': 'q5b-de',
+                    'q6-de': 'q6c-de', 'q7-de': 'q7a-de', 'q8-de': 'q8b-de', 'q9-de': 'q9c-de', 'q10-de': 'q10a-de'
+                };
+                const form = document.getElementById('levelTestForm-de');
+                const resultDisplay = document.getElementById('result-display-de');
+                calculateAndDisplayResult(form, correctAnswers, resultDisplay);
+            });
+
+
+            // === УНІВЕРСАЛЬНА ФУНКЦІЯ ПІДРАХУНКУ ===
+            function calculateAndDisplayResult(form, correctAnswers, resultDisplay) {
+                let score = 0;
+                let totalQuestions = Object.keys(correctAnswers).length;
+
+                for (const [question, correctAnswerId] of Object.entries(correctAnswers)) {
+                    const selectedRadio = form.querySelector(`input[name="${question}"]:checked`);
+                    if (selectedRadio && selectedRadio.id === correctAnswerId) {
+                        score++;
+                    }
+                }
+
+                // Визначаємо рівень на основі балів (з 10)
+                let level = "";
+                let description = "";
+
+                if (score <= 3) {
+                    level = "A1-A2 (Початковий)";
+                    description = "Ви робите перші кроки! Вам ідеально підійдуть наші курси для початківців.";
+                } else if (score <= 6) {
+                    level = "B1 (Середній)";
+                    description = "Ви вже маєте гарну базу! Курси B1 допоможуть вам вийти на новий рівень.";
+                } else if (score <= 8) {
+                    level = "B2 (Вище середнього)";
+                    description = "Чудово! Вам чудово підійдуть наші розмовні клуби та підготовка до іспитів.";
+                } else { // 9-10
+                    level = "C1 (Просунутий)";
+                    description = "Вражаючий результат! Наші курси для просунутих допоможуть вам відшліфувати знання.";
+                }
+
+                // Вставляємо результат
+                resultDisplay.innerHTML = `
+                    <h3 class="h4">Ваш результат: ${score} з ${totalQuestions}</h3>
+                    <p class="lead">Ваш приблизний рівень: <strong>${level}</strong></p>
+                    <p>${description}</p>
+                    <a href="../Auth/signup.html" class="btn btn-accent mt-2">Записатися на консультацію</a>
+                    <hr>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
