@@ -1,6 +1,5 @@
 /* === 1. ЗМІННІ ТА БАЗОВІ СТИЛІ === */
 :root {
-    /* === НОВА ПАЛІТРА === */
     --primary-color: #2B3A4A;      /* Головний (Темний Індиго) */
     --primary-light: #4A5C6F;    /* Світліший індиго (для :hover) */
     --accent-color: #00C9A7;      /* Акцент (Яскраво-бірюзовий) */
@@ -19,38 +18,90 @@
     --radius: 12px;
 }
 
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
 body {
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     color: var(--text-color);
-    background-color: var(--body-bg); /* <-- Світлий фон */
+    background-color: var(--body-bg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Новий шрифт для заголовків (ВСТАВТЕ LINK У HTML) */
+/* Заголовки */
 h1, h2, h3, h4, h5, .display-5, .display-6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: var(--primary-color); /* Заголовки тепер темного кольору індиго */
+    color: var(--primary-color);
 }
 
-/* === 2. ЛЕЙАУТ (ХЕДЕР, ФУТЕР) === */
+/* === ЛЕЙАУТ === */
 header {
-    background-color: var(--primary-color); /* <-- ТЕМНИЙ ХЕДЕР */
+    background-color: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background-color: var(--primary-color); /* <-- ТЕМНИЙ ФУТЕР */
-    margin-top: auto;
-    color: var(--text-color-light); /* Світлий текст у футері */
+/* === НОВІ СТИЛІ ДЛЯ ФУТЕРА (Як на скріншоті) === */
+
+/* Посилання у футері */
+.footer-link {
+    color: #555; /* Темно-сірий колір тексту */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
 }
-footer .text-body-secondary {
-    color: rgba(255, 255, 255, 0.7) !important; /* Робимо текст футера світлим */
+.footer-link:hover {
+    color: var(--accent-color); /* Кораловий при наведенні */
+    text-decoration: none;
 }
-footer a.text-body-secondary:hover {
-    color: var(--accent-color) !important; /* Посилання в футері стають бірюзовими */
+
+/* Маленькі іконки контактів (Telegram, WhatsApp) */
+.social-icon-sm {
+    color: #999;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+.social-icon-sm:hover {
+    color: var(--accent-color);
+}
+
+/* Великі кнопки (Outline) як на скріншоті */
+.btn-outline-custom {
+    border: 2px solid var(--accent-color); /* Коралова рамка */
+    color: var(--primary-color); /* Темний текст */
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.2s ease;
+    background-color: transparent;
+}
+.btn-outline-custom:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Круглі іконки соцмереж (сірі кружечки) */
+.social-icon-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #eee; /* Світло-сірий фон */
+    color: #777; /* Сіра іконка */
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.social-icon-round:hover {
+    background-color: var(--accent-color); /* Кораловий фон при наведенні */
+    color: white; /* Біла іконка */
+    transform: translateY(-3px);
 }
 
 .main-content {
@@ -59,9 +110,8 @@ footer a.text-body-secondary:hover {
     flex-direction: column;
 }
 
-/* === 3. ПОСИЛАННЯ ТА КНОПКИ === */
-
-/* Глобальні посилання (тепер бірюзові) */
+/* === ПОСИЛАННЯ ТА КНОПКИ === */
+/* Загальні посилання */
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -71,7 +121,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Звичайна кнопка (біла) в хедері (Sign In) */
+/* Звичайна кнопка в хедері (Sign In) */
 .navbar a.btn, .navbar button.btn {
     color: var(--text-color-light);
     border-color: var(--text-color-light);
@@ -83,10 +133,10 @@ a:hover {
     border-color: var(--text-color-light);
 }
 
-/* Кнопка "Sign Up" в хедері (яскраво-бірюзова) */
+/* Кнопка "Sign Up" в хедері */
 .navbar .btn-accent-nav {
     background-color: var(--accent-color);
-    color: var(--primary-color); /* Темний текст на ній */
+    color: var(--primary-color);
     border-color: var(--accent-color);
     font-weight: 600;
 }
@@ -96,7 +146,7 @@ a:hover {
     color: var(--primary-color);
 }
 
-/* Головна акцентна кнопка (бірюзова) */
+/* Головна акцентна кнопка */
 .btn-accent {
     background-color: var(--accent-color);
     color: var(--primary-color);
@@ -132,7 +182,7 @@ a:hover {
     color: white;
 }
 
-/* === 4. НАВІГАЦІЯ ТА КОМПОНЕНТИ === */
+/* === НАВІГАЦІЯ ТА КОМПОНЕНТИ === */
 
 /* Посилання в хедері (тепер світлі) */
 .navbar .nav-link {
@@ -141,11 +191,10 @@ a:hover {
     transition: color .2s ease, transform .2s ease;
 }
 .navbar .nav-link:hover, .navbar .nav-link.active {
-    color: #FFFFFF; /* Чисто білий */
+    color: #FFFFFF; 
     transform: scale(1.05);
 }
 .navbar .navbar-toggler-icon {
-     /* Робимо іконку бургера білою */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 .navbar .navbar-toggler {

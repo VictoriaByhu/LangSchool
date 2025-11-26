@@ -328,7 +328,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // === 1. АНГЛІЙСЬКА ===
             const answersBlockEN = document.getElementById('answers-en');
             answersBlockEN.addEventListener('show.bs.collapse', function () {
                 const correctAnswers = {
@@ -340,7 +339,6 @@
                 calculateAndDisplayResult(form, correctAnswers, resultDisplay);
             });
 
-            // === 2. ІСПАНСЬКА ===
             const answersBlockES = document.getElementById('answers-es');
             answersBlockES.addEventListener('show.bs.collapse', function () {
                 const correctAnswers = {
@@ -352,7 +350,6 @@
                 calculateAndDisplayResult(form, correctAnswers, resultDisplay);
             });
 
-            // === 3. НІМЕЦЬКА ===
             const answersBlockDE = document.getElementById('answers-de');
             answersBlockDE.addEventListener('show.bs.collapse', function () {
                 const correctAnswers = {
@@ -365,7 +362,6 @@
             });
 
 
-            // === УНІВЕРСАЛЬНА ФУНКЦІЯ ПІДРАХУНКУ ===
             function calculateAndDisplayResult(form, correctAnswers, resultDisplay) {
                 let score = 0;
                 let totalQuestions = Object.keys(correctAnswers).length;
@@ -377,7 +373,6 @@
                     }
                 }
 
-                // Визначаємо рівень на основі балів (з 10)
                 let level = "";
                 let description = "";
 
@@ -390,12 +385,11 @@
                 } else if (score <= 8) {
                     level = "B2 (Вище середнього)";
                     description = "Чудово! Вам чудово підійдуть наші розмовні клуби та підготовка до іспитів.";
-                } else { // 9-10
+                } else {
                     level = "C1 (Просунутий)";
                     description = "Вражаючий результат! Наші курси для просунутих допоможуть вам відшліфувати знання.";
                 }
 
-                // Вставляємо результат
                 resultDisplay.innerHTML = `
                     <h3 class="h4">Ваш результат: ${score} з ${totalQuestions}</h3>
                     <p class="lead">Ваш приблизний рівень: <strong>${level}</strong></p>
@@ -407,4 +401,13 @@
         });
     </script>
 </body>
+
+    <footer class="py-4 mt-auto bg-white border-top text-center">
+        <div class="container">
+            <p class="text-muted small mb-0">
+                &copy; 2025 LinguaLab. 
+                <a href="#" class="text-decoration-none ms-2">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
 </html>
