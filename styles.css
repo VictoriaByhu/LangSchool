@@ -184,7 +184,7 @@ a:hover {
 
 /* === НАВІГАЦІЯ ТА КОМПОНЕНТИ === */
 
-/* Посилання в хедері (тепер світлі) */
+/* Посилання в хедері */
 .navbar .nav-link {
     color: rgba(255, 255, 255, 0.8); 
     font-weight: 500;
@@ -232,18 +232,18 @@ a:hover {
 }
 .accordion-button:not(.collapsed) {
     color: var(--primary-color);
-    background-color: #e6f9f6; /* Дуже світлий бірюзовий */
+    background-color: #e6f9f6;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .05);
 }
 .accordion-button:not(.collapsed)::after {
-    filter: none; /* Стрілка залишається бірюзовою */
+    filter: none;
 }
 .accordion-button:focus {
-    box-shadow: 0 0 0 .25rem rgba(0, 201, 167, 0.25); /* Бірюзова тінь */
+    box-shadow: 0 0 0 .25rem rgba(0, 201, 167, 0.25);
     border-color: var(--accent-color);
 }
 
-/* === 5. КАРТКИ === */
+/* === КАРТКИ === */
 
 .card,
 .auth-card,
@@ -288,14 +288,14 @@ a:hover {
 
 .testimonial-card .blockquote-footer {
     font-style: normal;
-    background-color: var(--primary-color); /* Ваш темний фон (як на скріншоті) */
-    color: var(--text-color-light); /* <--- ВИПРАВЛЕНО: Світлий текст */
-    padding: 0.5rem 1rem; /* Додаємо відступи, щоб було гарно */
-    margin-top: 1rem; /* Відступ від цитати */
-    border-radius: 0.5rem; /* Невелике заокруглення */
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
 }
 .star-rating {
-    color: var(--star-color); /* Золотий */
+    color: var(--star-color);
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
 }
@@ -311,7 +311,7 @@ a:hover {
     color: var(--primary-color);
 }
 
-/* === 6. СТОРІНКИ АВТОРИЗАЦІЇ (AUTH) === */
+/* === СТОРІНКИ АВТОРИЗАЦІЇ (AUTH) === */
 .auth-page .main-content {
     justify-content: center;
     padding-top: 3rem;
@@ -335,7 +335,7 @@ a:hover {
     font-weight: 500;
 }
 
-/* === 7. ФОРМИ ТА ІНШІ ЕЛЕМЕНТИ === */
+/* === ФОРМИ ТА ІНШІ ЕЛЕМЕНТИ === */
 
 .form-control:focus, 
 .form-check-input:focus {
@@ -387,7 +387,7 @@ a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* === НОВІ СТИЛІ ДЛЯ СТОРІНКИ "ЦІНИ" (V2) === */
+/* === СТИЛІ ДЛЯ СТОРІНКИ "ЦІНИ" === */
 
 /* Список переваг ліворуч */
 .value-prop-list li {
@@ -396,12 +396,12 @@ a:hover {
     gap: 1rem;
 }
 .value-prop-list i {
-    font-size: 1.5rem; /* Розмір іконки */
-    color: var(--accent-color); /* Колір іконки (бірюзовий) */
+    font-size: 1.5rem;
+    color: var(--accent-color);
     margin-top: 5px;
 }
 .value-prop-list strong {
-    color: var(--primary-color); /* Темний колір заголовку */
+    color: var(--primary-color);
     display: block;
 }
 .value-prop-list span {
@@ -416,28 +416,23 @@ a:hover {
     background-color: var(--card-bg);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-    overflow: hidden; /* Ховаємо кути баджу */
+    overflow: hidden;
     display: block;
     cursor: pointer;
-    margin-bottom: 0; /* Видаляємо відступ за замовчуванням у <label> */
+    margin-bottom: 0;
 }
 .pricing-card-radio:hover {
-    border-color: var(--accent-dark); /* Темніший колір при наведенні */
+    border-color: var(--accent-dark);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 .pricing-card-radio .card-body {
     padding: 1.25rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Відступ між кнопкою та контентом */
+    gap: 1.5rem;
 }
 
-/* Стиль для "популярної" картки */
-.pricing-card-radio.popular {
-    border-color: var(--accent-color); /* Рамка одразу бірюзова */
-}
 
-/* Стилізуємо саму радіо-кнопку (робимо її кастомною) */
 .pricing-card-radio .form-check-input[type="radio"] {
     -webkit-appearance: none;
     appearance: none;
@@ -449,7 +444,7 @@ a:hover {
     height: 1.25rem;
     border: 2px solid #ddd;
     border-radius: 50%;
-    flex-shrink: 0; /* Забороняємо кнопці стискатися */
+    flex-shrink: 0;
     display: grid;
     place-content: center;
     transition: all 0.1s ease-in-out;
@@ -472,51 +467,44 @@ a:hover {
     transform: scale(1);
 }
 
-/* Стиль для всієї картки, коли вона :checked (використовуємо :has) */
+
 .pricing-card-radio:has(input:checked) {
     border-color: var(--accent-color);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* === НОВІ СТИЛІ ДЛЯ СТОРІНКИ "ЦІНИ" (Details) === */
-/* ... (інші стилі тут, не змінюйте їх) ... */
-
-/* Бадж "Популярна пропозиція" (ОНОВЛЕНО НА СТРІЧКУ) */
 .badge-popular {
     position: absolute;
-    top: 0; /* Прикріпляємо до верхнього краю */
-    left: 50%; /* Центруємо по горизонталі */
-    transform: translateX(-50%); /* Точне центрування */
-    background-color: var(--accent-color); /* Колір вашої акцентної теми */
-    color: var(--primary-color); /* Темний текст */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 0.8rem;
-    padding: 0.35rem 1.25rem; /* Відступи */
-    border-bottom-left-radius: 8px; /* Заокруглені кути знизу */
-    border-bottom-right-radius: 8px; /* Заокруглені кути знизу */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Легка тінь */
+    padding: 0.35rem 1.25rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 10;
-    white-space: nowrap; /* Щоб текст не переносився */
-    /* Додаємо невеликий емодзі 🔥, як на скріншоті */
+    white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 .badge-popular::before {
-    content: '🔥'; /* Емодзі вогню */
+    content: '🔥';
     font-size: 0.9em;
 }
 
-
-/* Переносимо рамку на .card-body, щоб рамка була рівномірна */
 .pricing-card-radio.popular .card-body {
     border: 2px solid var(--accent-color);
     border-radius: var(--radius);
 }
-/* Прибираємо рамку з самого .pricing-card-radio для popular, щоб не було подвійної рамки */
+
 .pricing-card-radio.popular {
     border: none;
-    box-shadow: none; /* Прибираємо тінь, якщо вона була на зовнішній */
+    box-shadow: none;
 }
 
 /* Стиль ціни */
