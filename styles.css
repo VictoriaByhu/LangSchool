@@ -470,3 +470,7 @@ a:hover {
     color: white; /* Білий текст */
     transform: translateY(-2px);
 }
+
+.blockquote-footer{
+    color: var(--card-bg);
+}
