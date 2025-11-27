@@ -11,37 +11,42 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../../styles.css">
 
-    <link rel="icon" type="image/png" href="../../assets/logo.PNG">
+    <link rel="icon" type="image/png" href="../../assets/icontab.png">
 </head>
 <body>
     <header class="sticky-top shadow-sm">
-        <nav id="mainNav" class="navbar navbar-expand-lg navbar-light container px-3">
-            <a class=" d-flex align-items-center" href="../../index.html">
-                <img src="../../assets/logo.PNG" style="height:125px " alt="LinguaLab" class="rounded-2">
+        <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark container-fluid px-4">
+            
+            <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+                <img src="../../assets/logo.png" style="height: 50px;" alt="LinguaLab" class="rounded-2">
             </a>
 
-            <button class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navMenu" 
-                aria-controls="navMenu" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav gap-3 mb-2 mb-lg-0">
+                <ul class="navbar-nav gap-3 me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#about">Про нас</a></li>
                     <li class="nav-item"><a class="nav-link" href="../Courses/courses.html">Курси</a></li>
                     <li class="nav-item"><a class="nav-link" href="../Courses/details.html">Деталі та Ціни</a></li>
                     <li class="nav-item"><a class="nav-link" href="../Schedule/schedule.html">Розклад</a></li>
                     <li class="nav-item"><a class="nav-link" href="../Feedbacks/feedbacks.html">Відгуки</a></li>
-                    <li class="nav-item"><a class="btn" href="../Auth/signin.html">Увійти</a></li>
-                    <li class="nav-item"><a class="btn" href="../Auth/signup.html">Зареєструватись</a></li>
+
                 </ul>
+
+                <a class="btn d-inline-flex align-items-center gap-2" href="../Auth/signin.html">
+                    <i class="bi bi-box-arrow-in-right" style="font-size: 1.2rem;"></i> 
+                    Увійти
+                </a>
             </div>
         </nav> 
     </header>
@@ -91,10 +96,12 @@
             </div>
         </section>
 
-        <section class="py-5 bg-light">
-            <div class="container text-center">
-                <h2 class="display-6 fw-bold mb-4">Наша місія</h2>
-                <p class="lead col-lg-8 mx-auto">У LinguaLab наша місія полягає в тому, щоб надати людям можливість впевнено спілкуватися між культурами. Ми вважаємо, що вивчення мов має бути захопливою, ефективною та приємною подорожжю для кожного.</p>
+        <section class="py-5" style="background-color: white;">
+            <div class="container text-center" data-aos="fade-up">
+                <h2 class="display-6 fw-bold mb-4" style="color: var(--text-color);">Наша місія</h2>
+                <p class="lead col-lg-8 mx-auto" style="color: var(--text-color);">
+                    У LinguaLab наша місія полягає в тому, щоб надати людям можливість впевнено спілкуватися між культурами. Ми вважаємо, що вивчення мов має бути захопливою, ефективною та приємною подорожжю для кожного.
+                </p>
             </div>
         </section>
 
@@ -161,7 +168,7 @@
         </section>
     </main>
 
-    <footer class="pt-5 pb-3 border-top bg-white">
+    <footer class="pt-5 pb-3 border-top">
         <div class="container">
             <div class="row g-4 mb-5">
                 
@@ -239,5 +246,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init(); // Запуск анімації
+    </script>
 </body>
 </html>
