@@ -109,7 +109,7 @@ footer .text-muted {
 /* Кнопки в футері (Outline) */
 .btn-outline-custom {
     border: 2px solid var(--accent-color);
-    color: #fff; /* Білий текст на темному футері */
+    color: #fff;
     font-weight: 600;
     border-radius: 12px;
     padding: 0.5rem 1.2rem;
@@ -452,4 +452,21 @@ a:hover {
 
 .star-rating{
     color: var(--star-color);
+}
+
+/* Кнопка з прозорим фоном і фіолетовим текстом (для світлих блоків) */
+.btn-outline-purple {
+    background-color: transparent;
+    color: var(--accent-color); /* Фіолетовий текст */
+    border: 2px solid var(--accent-color); /* Фіолетова рамка */
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-purple:hover {
+    background-color: var(--accent-dark); /* Фіолетовий фон при наведенні */
+    color: white; /* Білий текст */
+    transform: translateY(-2px);
 }
