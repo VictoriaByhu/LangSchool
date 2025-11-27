@@ -376,7 +376,7 @@ a:hover {
 }
 /* Галочка всередині */
 .pricing-card-radio input[type="radio"]:checked::before {
-    content: "✔";
+    
     color: white;
     font-size: 0.9rem;
     font-weight: bold;
