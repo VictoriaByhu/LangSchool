@@ -471,6 +471,7 @@ a:hover {
     transform: translateY(-2px);
 }
 
+<<<<<<< HEAD
 /* === СТИЛІ ДЛЯ БЛОКУ ЗАЯВКИ === */
 
 /* М'які поля вводу (сірий фон) */
@@ -572,4 +573,8 @@ a:hover {
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: var(--text-color);
+=======
+.blockquote-footer{
+    color: var(--card-bg);
+>>>>>>> 9679c97b7c629a32a012b143e7dd2625f3ad0a10
 }
