@@ -470,3 +470,106 @@ a:hover {
     color: white; /* Білий текст */
     transform: translateY(-2px);
 }
+
+/* === СТИЛІ ДЛЯ БЛОКУ ЗАЯВКИ === */
+
+/* М'які поля вводу (сірий фон) */
+.form-control-soft {
+    background-color: #F3F4F6; /* Світло-сірий */
+    border: 1px solid transparent;
+    padding: 12px 20px;
+    border-radius: 12px; /* Округлі кути */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* При натисканні */
+.form-control-soft:focus {
+    background-color: #fff;
+    border-color: var(--accent-color); /* Фіолетова рамка при вводі */
+    box-shadow: 0 0 0 4px rgba(138, 87, 245, 0.1);
+    color: var(--primary-color);
+}
+
+/* Колір плейсхолдера (підказки) */
+.form-control-soft::placeholder {
+    color: #9CA3AF;
+}
+
+/* Ефект наведення на червону кнопку */
+.btn-danger:hover {
+    background-color: var(--accent-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(214, 0, 28, 0.3);
+}
+
+/* === СТИЛІ ДЛЯ КАРТОК ВИКЛАДАЧІВ === */
+
+.teacher-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.teacher-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+/* Обгортка для фото (щоб зробити його гарним квадратом) */
+.teacher-img-wrapper {
+    width: 140px; /* Фіксований розмір як на Preply */
+    height: 140px;
+    position: relative;
+}
+.teacher-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб фото не розтягувалось */
+    border-radius: 12px;
+}
+
+/* Зелена крапка "Онлайн" */
+.status-dot {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #25D366;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Кастомні бейджі (світлий фон, кольоровий текст) */
+.bg-purple-light {
+    background-color: #F3F0FF;
+}
+.text-purple {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.bg-green-light {
+    background-color: #E6FFFA;
+}
+.text-green {
+    color: #00A08B; /* Темніший зелений для тексту */
+    font-weight: 700;
+}
+
+/* Лінія розділення тільки на комп'ютерах */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Обрізка тексту до 2 рядків */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--text-color);
+}
