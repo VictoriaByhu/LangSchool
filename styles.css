@@ -189,7 +189,7 @@ a:hover {
     font-weight: 700;
     border-radius: 10px;
     padding: 8px 25px; /* Трохи ширша для краси */
-    box-shadow: 0 4px 15px rgba(5, 201, 133, 0.3); /* Зелене світіння */
+    box-shadow: 0 4px 15px rgba(77, 34, 130, 0.3); /* Зелене світіння */
     transition: all 0.2s ease;
 }
 
@@ -197,7 +197,7 @@ a:hover {
     background-color: var(--accent-dark); /* Темніший зелений */
     color: white;
     transform: translateY(-2px); /* Ефект підняття */
-    box-shadow: 0 6px 20px rgba(5, 201, 133, 0.4);
+    box-shadow: 0 6px 20px rgba(77, 34, 130, 0.3);
 }
 
 /* ГОЛОВНА КНОПКА ДІЇ */
@@ -209,13 +209,13 @@ a:hover {
     padding: 0.75rem 2rem;
     border-radius: 12px;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 15px rgba(5, 201, 133, 0.3); 
+    box-shadow: 0 4px 15px rgba(77, 34, 130, 0.3); 
 }
 .btn-accent:hover {
     background-color: var(--accent-dark);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(5, 201, 133, 0.4);
+    box-shadow: 0 6px 20px rgba(77, 34, 130, 0.3);
 }
 
 /* Кнопки в Hero (Фіолетова і прозора) */
@@ -501,7 +501,7 @@ a:hover {
 .btn-danger:hover {
     background-color: var(--accent-dark) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(214, 0, 28, 0.3);
+    box-shadow: 0 4px 15px rgba(138, 87, 245, 0.1);
 }
 
 /* === СТИЛІ ДЛЯ КАРТОК ВИКЛАДАЧІВ === */
@@ -572,4 +572,7 @@ a:hover {
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: var(--text-color);
+}
+.blockquote-footer{
+    color: var(--text-muted);
 }
