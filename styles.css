@@ -576,3 +576,72 @@ a:hover {
 .blockquote-footer{
     color: var(--text-muted);
 }
+
+/* === СЕКЦІЯ ДЕТАЛЕЙ КУРСУ === */
+
+/* М'яке коло для іконок */
+.icon-circle-soft {
+    width: 70px;
+    height: 70px;
+    background-color: #F3F0FF; /* Дуже світлий фіолетовий */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* При наведенні на картку іконка трохи підстрибує */
+.card:hover .icon-circle-soft {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--accent-color); /* Стає яскравим */
+}
+.card:hover .icon-circle-soft i {
+    color: white !important; /* Іконка стає білою */
+}
+
+/* Стиль для бейджа "Подарунок" */
+.rounded-bottom-start-3 {
+    border-bottom-left-radius: 12px;
+}
+
+/* === СТИЛІ ДЛЯ НОВОГО РОЗКЛАДУ === */
+
+/* Картка заняття */
+.schedule-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+    border-left: 5px solid var(--accent-color); /* Ефект кольорової полоски при наведенні */
+}
+
+/* Лінія розділення (тільки на ПК) */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Вкладки (Pills) */
+.nav-pills .nav-link {
+    color: var(--primary-color);
+    background-color: #fff;
+    border: 1px solid #eee;
+    transition: all 0.3s;
+}
+.nav-pills .nav-link:hover {
+    border-color: var(--accent-color);
+}
+.nav-pills .nav-link.active {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(138, 87, 245, 0.4);
+}
+
+/* Дрібний текст (spacing) */
+.ls-1 {
+    letter-spacing: 1px;
+}

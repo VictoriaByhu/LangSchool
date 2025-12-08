@@ -50,99 +50,304 @@
     </header>
 
     <main class="main-content">
-        <section id="schedule" class="py-5">
+        <section class="py-5 bg-light">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bold">Розклад занять</h1>
-                    <p class="lead">Знайдіть групу, яка відповідає вашому рівню та часу. Весь час відображається у вашому місцевому часовому поясі.</p>
+        
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-6 fw-bold">Розклад занять</h2>
+                    <p class="lead text-muted">Оберіть зручний час та приєднуйтесь до групи</p>
                 </div>
 
-                <ul class="nav nav-tabs" id="scheduleTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="eng-tab" data-bs-toggle="tab" data-bs-target="#eng-schedule" type="button" role="tab" aria-controls="eng-schedule" aria-selected="true">Англійська</button>
+                <ul class="nav nav-pills justify-content-center mb-5 gap-3" id="scheduleTabs" role="tablist" data-aos="fade-up">
+                    <li class="nav-item">
+                        <button class="nav-link active rounded-pill px-4 fw-bold" id="eng-tab" data-bs-toggle="pill" data-bs-target="#eng-content" type="button">🇬🇧 Англійська</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="esp-tab" data-bs-toggle="tab" data-bs-target="#esp-schedule" type="button" role="tab" aria-controls="esp-schedule" aria-selected="false">Іспанська</button>
+                    <li class="nav-item">
+                        <button class="nav-link rounded-pill px-4 fw-bold" id="esp-tab" data-bs-toggle="pill" data-bs-target="#esp-content" type="button">🇪🇸 Іспанська</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="ger-tab" data-bs-toggle="tab" data-bs-target="#ger-schedule" type="button" role="tab" aria-controls="ger-schedule" aria-selected="false">Німецька</button>
+                    <li class="nav-item">
+                        <button class="nav-link rounded-pill px-4 fw-bold" id="deu-tab" data-bs-toggle="pill" data-bs-target="#deu-content" type="button">🇩🇪 Німецька</button>
                     </li>
                 </ul>
 
-                <div class="tab-content mt-4" id="scheduleTabContent">
-                    <div class="tab-pane fade show active" id="eng-schedule" role="tabpanel" aria-labelledby="eng-tab">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover schedule-table">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th scope="col">Курс</th>
-                                        <th scope="col">Рівень</th>
-                                        <th scope="col">Дні</th>
-                                        <th scope="col">Час</th>
-                                        <th scope="col">Інструктор</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
+                <div class="tab-content" id="scheduleTabContent">
+            
+                    <div class="tab-pane fade show active" id="eng-content" role="tabpanel">
+                        <div class="d-flex flex-column gap-3">
 
-                                <tbody>
-                                    <tr>
-                                        <td>Англійська - Початківець</td>
-                                        <td>A1</td>
-                                        <td>Пн та Ср</td>
-                                        <td>18:00 - 19:30</td>
-                                        <td>Сара К.</td>
-                                        <td><button class="btn btn-accent btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватися</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Англійська – Середній рівень</td>
-                                        <td>B1</td>
-                                        <td>Вт та чт</td>
-                                        <td>19:00 - 20:30</td>
-                                        <td>Джон П.</td>
-                                        <td><button class="btn btn-accent btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватися</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Розмовний клуб</td>
-                                        <td>B2+</td>
-                                        <td>Субота</td>
-                                        <td>12:00 - 13:00</td>
-                                        <td>Девід Р. (носій мови)</td>
-                                        <td><button class="btn btn-accent btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Приєднатися</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up">
+                                <div class="row align-items-center gy-3">
+                            
+                                    <div class="col-md-3 text-center text-md-start border-end-md">
+                                        <div class="time-display fw-bold" style="color: var(--accent-color); font-size: 1.8rem;">18:00</div>
+                                        <div class="text-muted small fw-bold text-uppercase ls-1">Пн • Ср • Пт</div>
+                                    </div>
+
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">General English</h5>
+                                            <span class="badge bg-green-light text-green rounded-pill">Рівень A2</span>
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">
+                                                Викладач: <span class="fw-bold text-dark">Анна К.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-accent px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Записатись</button>
+                                        <div class="small text-muted mt-2">Залишилось 2 місця</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md">
+                                        <div class="time-display fw-bold" style="color: var(--accent-color); font-size: 1.8rem;">19:30</div>
+                                        <div class="text-muted small fw-bold text-uppercase ls-1">Вт • Чт</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Business English</h5>
+                                            <span class="badge bg-purple-light text-purple rounded-pill">Рівень B2</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">
+                                                Викладач: <span class="fw-bold text-dark">Майкл Д.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-accent px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Записатись</button>
+                                        <div class="small text-success mt-2 fw-bold">Нова група</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                                <div class="position-absolute top-0 start-0 h-100 bg-warning" style="width: 5px;"></div>
+                                
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md ps-4">
+                                        <div class="time-display fw-bold" style="color: var(--primary-color); font-size: 1.8rem;">12:00</div>
+                                        <div class="text-muted small fw-bold text-uppercase ls-1">Субота</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Speaking Club 🗣</h5>
+                                            <span class="badge bg-light text-dark border rounded-pill">Всі рівні</span>
+                                        </div>
+                                        <p class="small text-muted mb-0 mt-2">
+                                            Тема: "Traveling and Adventures". Практика з носієм мови.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-outline-purple px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Приєднатись</button>
+                                        <div class="small text-muted mt-2">Безкоштовно для студентів</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up">
+                                <div class="position-absolute top-0 start-0 h-100 bg-info" style="width: 5px;"></div>
+
+                                <div class="row align-items-center gy-3">
+        
+                                    <div class="col-md-3 text-center text-md-start border-end-md ps-4">
+                                        <div class="time-display fw-bold" style="color: var(--primary-color); font-size: 1.8rem;">14:00</div>
+                                        <div class="text-info small fw-bold text-uppercase ls-1">
+                                            24 Жовтня (Чт)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Individual Lesson</h5>
+                                            <span class="badge bg-info bg-opacity-10 text-info border border-info rounded-pill">1 на 1</span>
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">
+                                                Викладач: <span class="fw-bold text-dark">Сара Л. (Native)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-outline-dark px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Забронювати</button>
+                                        <div class="small text-muted mt-2">Тільки 1 місце</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up">
+                                <div class="position-absolute top-0 start-0 h-100 bg-info" style="width: 5px;"></div>
+
+                                <div class="row align-items-center gy-3">
+        
+                                    <div class="col-md-3 text-center text-md-start border-end-md ps-4">
+                                        <div class="time-display fw-bold" style="color: var(--primary-color); font-size: 1.8rem;">16:30</div>
+                                        <div class="text-info small fw-bold text-uppercase ls-1">
+                                            25 Жовтня (Пт)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Індивідуальний урок</h5>
+                                            <span class="badge bg-info bg-opacity-10 text-info border border-info rounded-pill">Premium</span>
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">
+                                                Викладач: <span class="fw-bold text-dark">Джон С.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-outline-dark px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Забронювати</button>
+                                        <div class="small text-muted mt-2">Вікно звільнилось!</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="esp-schedule" role="tabpanel" aria-labelledby="esp-tab">
-                        <p>Наші нові групи з іспанської вже формуються! Зареєструйтесь на тест на рівень, щоб отримувати сповіщення про розклад.</p>
+                    <div class="tab-pane fade" id="esp-content" role="tabpanel">
+                        <div class="d-flex flex-column gap-3">
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up">
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md">
+                                        <div class="time-display fw-bold" style="color: var(--accent-color); font-size: 1.8rem;">19:00</div>
+                                        <div class="text-muted small fw-bold text-uppercase ls-1">Вт • Чт</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Español Básico</h5>
+                                            <span class="badge bg-green-light text-green rounded-pill">Рівень A1</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">Викладач: <span class="fw-bold text-dark">Карлос Р. (Native)</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-accent px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Записатись</button>
+                                        <div class="small text-muted mt-2">Залишилось 3 місця</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                                <div class="position-absolute top-0 start-0 h-100 bg-info" style="width: 5px;"></div>
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md ps-4">
+                                        <div class="time-display fw-bold" style="color: var(--primary-color); font-size: 1.8rem;">16:00</div>
+                                        <div class="text-info small fw-bold text-uppercase ls-1">26 Жовтня (Сб)</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Індивідуальний урок</h5>
+                                            <span class="badge bg-info bg-opacity-10 text-info border border-info rounded-pill">1 на 1</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">Викладач: <span class="fw-bold text-dark">Софія Л.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-outline-dark px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Забронювати</button>
+                                        <div class="small text-danger mt-2 fw-bold">Останній слот!</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+            
+                    <div class="tab-pane fade" id="deu-content" role="tabpanel">
+                        <div class="d-flex flex-column gap-3">
 
-                    <div class="tab-pane fade" id="ger-schedule" role="tabpanel" aria-labelledby="ger-tab">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover schedule-table">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th scope="col">Курс</th>
-                                        <th scope="col">Рівень</th>
-                                        <th scope="col">Дні</th>
-                                        <th scope="col">Час</th>
-                                        <th scope="col">Інструктор</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up">
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md">
+                                        <div class="time-display fw-bold" style="color: var(--accent-color); font-size: 1.8rem;">10:00</div>
+                                        <div class="text-muted small fw-bold text-uppercase ls-1">Пн • Ср • Пт</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Deutsch Start</h5>
+                                            <span class="badge bg-green-light text-green rounded-pill">Рівень A1</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">Викладач: <span class="fw-bold text-dark">Ганна М.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-accent px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Записатись</button>
+                                        <div class="small text-success mt-2 fw-bold">Набір групи</div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                <tbody>
-                                    <tr>
-                                        <td>Німецька - Початкова</td>
-                                        <td>A1</td>
-                                        <td>Вт та чт</td>
-                                        <td>18:00 - 19:30</td>
-                                        <td>Анна М.</td>
-                                        <td><button class="btn btn-accent btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">Зареєструватися</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md">
+                                        <div class="time-display fw-bold" style="color: var(--accent-color); font-size: 1.8rem;">18:30</div>
+                                        <div class="text-muted small fw-bold text-uppercase ls-1">Вт • Чт</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Deutsch Fortgeschritten</h5>
+                                            <span class="badge bg-purple-light text-purple rounded-pill">Рівень B1</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">Викладач: <span class="fw-bold text-dark">Маркус Ш. (Native)</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-accent px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Записатись</button>
+                                        <div class="small text-muted mt-2">Залишилось 1 місце</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card bg-white p-4 rounded-4 shadow-sm border-0 position-relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                                <div class="position-absolute top-0 start-0 h-100 bg-info" style="width: 5px;"></div>
+                                <div class="row align-items-center gy-3">
+                                    <div class="col-md-3 text-center text-md-start border-end-md ps-4">
+                                        <div class="time-display fw-bold" style="color: var(--primary-color); font-size: 1.8rem;">13:00</div>
+                                        <div class="text-info small fw-bold text-uppercase ls-1">28 Жовтня (Пн)</div>
+                                    </div>
+                                    <div class="col-md-6 px-md-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <h5 class="fw-bold mb-0">Підготовка до Goethe-Zertifikat</h5>
+                                            <span class="badge bg-info bg-opacity-10 text-info border border-info rounded-pill">Premium</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mt-3">
+                                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" class="rounded-circle object-fit-cover" width="35" height="35" alt="Teacher">
+                                            <div class="small text-muted">Викладач: <span class="fw-bold text-dark">Ганна М.</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end">
+                                        <button class="btn btn-outline-dark px-4 rounded-pill fw-bold w-100" data-bs-toggle="modal" data-bs-target="#bookingModal">Забронювати</button>
+                                        <div class="small text-muted mt-2">Інтенсив</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
