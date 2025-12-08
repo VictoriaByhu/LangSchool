@@ -200,6 +200,7 @@ a:hover {
     box-shadow: 0 6px 20px rgba(77, 34, 130, 0.3);
 }
 
+
 /* ГОЛОВНА КНОПКА ДІЇ */
 .btn-accent {
     background-color: var(--accent-color);
