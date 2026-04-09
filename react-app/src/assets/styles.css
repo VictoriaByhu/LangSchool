@@ -1,0 +1,648 @@
+/* === 1. ЗМІННІ ТА БАЗОВІ СТИЛІ (EnglishDom Style) === */
+:root {
+    /* --- НОВА КОЛЬОРОВА ГАМА --- */
+    
+    /* 1. Основний темний (Текст, Хедер, Футер) */
+    --primary-color: #2D2F36; 
+    
+    /* 2. Брендовий ФІОЛЕТОВИЙ (Акценти, посилання, іконки, рамки) */
+    --accent-color: #8A57F5;  
+    --accent-dark: #4f299f;   /* Трохи темніший фіолетовий */
+
+    /* 3. Дія/Кнопки (ЗЕЛЕНИЙ - як на скріншоті) */
+    --action-color: #05C985;
+    --action-hover: #04b375;
+
+    /* 4. База */
+    --text-color: #2D2F36;
+    --text-muted: #88909B; /* Світліший сірий для опису */
+    --body-bg: #F9F9FB;    /* Дуже світлий фон сторінки (не чисто білий) */
+    --card-bg: #FFFFFF;
+    --star-color: #FFC107;
+
+    --radius: 16px; /* Більш заокруглені кути */
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--text-color);
+    background-color: var(--body-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, .display-5, .display-6 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800; /* ExtraBold - ключ до схожості */
+    color: var(--primary-color);
+    letter-spacing: -0.03em; /* Трохи "стискаємо" літери, як у Preply */
+    line-height: 1.1; /* Сучасний вигляд */
+}
+
+/* === ЛЕЙАУТ === */
+header {
+    background-color: var(--primary-color) !important; /* Графітовий фон */
+    color: #fff; /* Білий основний текст */
+    border-top: none !important;
+}
+
+/* === СТИЛІ ДЛЯ ФУТЕРА === */
+footer {
+    background-color: var(--primary-color); /* Темний футер */
+    color: var(--primary-color);
+}
+
+footer h6 {
+    color: #fff !important; 
+}
+
+footer .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+}
+.footer-link:hover {
+    color: var(--accent-color) !important; /* Фіолетовий при наведенні */
+    text-decoration: none;
+}
+
+.social-icon-sm {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+.social-icon-sm:hover {
+    color: var(--accent-color);
+}
+
+/* Круглі іконки соцмереж */
+.social-icon-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* Напівпрозорі на темному */
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.social-icon-round:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Кнопки в футері (Outline) */
+.btn-outline-custom {
+    border: 2px solid var(--accent-color);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.2s ease;
+    background-color: transparent;
+}
+.btn-outline-custom:hover {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(138, 87, 245, 0.4); /* Фіолетове світіння */
+}
+
+.main-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* === ПОСИЛАННЯ ТА КНОПКИ === */
+/* Загальні посилання - ФІОЛЕТОВІ */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+
+
+/* Навігація в Хедері (Темний текст на білому) */
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+    transition: color .2s ease;
+    font-size: 0.95rem !important;
+}
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--accent-color) !important;
+}
+.navbar .navbar-toggler-icon {
+    /* Чорний бургер */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke=' rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+/* Рамка кнопки */
+.navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* Напівпрозора біла рамка */
+}
+
+/* При фокусі/натисканні */
+.navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25); /* Біле світіння */
+}
+
+/* Кнопка "Sign In" (Увійти) - ТЕПЕР БІЛА для темного фону */
+.navbar a.btn, .navbar button.btn {
+    color: #ffffff; /* Білий текст */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Напівпрозора біла рамка */
+    font-weight: 500;
+    font-size: 0.95rem !important;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.navbar a.btn:hover {
+    border-color: var(--accent-color); /* Фіолетова рамка при наведенні */
+    color: var(--accent-color); /* Фіолетовий текст */
+    background: transparent;
+}
+
+/* Кнопка "Sign Up" (Реєстрація) - ЗЕЛЕНА */
+.navbar .btn-accent-nav {
+    background-color: var(--accent-dark); /* Зелений фон */
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 8px 25px; /* Трохи ширша для краси */
+    box-shadow: 0 4px 15px rgba(77, 34, 130, 0.3); /* Зелене світіння */
+    transition: all 0.2s ease;
+}
+
+.navbar .btn-accent-nav:hover {
+    background-color: var(--accent-dark); /* Темніший зелений */
+    color: white;
+    transform: translateY(-2px); /* Ефект підняття */
+    box-shadow: 0 6px 20px rgba(77, 34, 130, 0.3);
+}
+
+
+/* ГОЛОВНА КНОПКА ДІЇ */
+.btn-accent {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(77, 34, 130, 0.3); 
+}
+.btn-accent:hover {
+    background-color: var(--accent-dark);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(77, 34, 130, 0.3);
+}
+
+/* Кнопки в Hero (Фіолетова і прозора) */
+.hero .btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+}
+.hero .btn-primary:hover {
+    background-color: var(--accent-dark);
+}
+.hero .btn-outline-secondary {
+    color: var(--primary-color);
+    border: 2px solid #eee;
+    border-radius: 12px;
+    background: white;
+}
+.hero .btn-outline-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+
+/* === КОМПОНЕНТИ === */
+
+/* Таби (Courses, Schedule) */
+.nav-tabs .nav-link {
+    color: var(--text-muted);
+    border: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+.nav-tabs .nav-link.active {
+    font-weight: 700;
+    color: var(--accent-color);
+    background: transparent;
+    border-bottom: 2px solid var(--accent-color);
+}
+.nav-tabs .nav-link:hover:not(.active) {
+    color: var(--primary-color);
+}
+
+/* Акордеон (Details) */
+.accordion-item {
+    background-color: var(--card-bg);
+    border: 1px solid #eee;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.accordion-button {
+    color: var(--primary-color);
+    font-weight: 700;
+    background-color: var(--card-bg);
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+    color: var(--accent-color);
+    background-color: #F8F5FF; /* Світло-фіолетовий */
+}
+.accordion-button::after {
+    /* Фіолетова стрілка */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238A57F5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* === КАРТКИ === */
+.card, .auth-card, .icon-box {
+    border: none; /* Прибираємо рамки */
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* М'яка, глибока тінь */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover, .auth-card:hover, .icon-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(138, 87, 245, 0.1); /* Тінь з відтінком фіолетового */
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px; /* М'який квадрат замість кола */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(138, 87, 245, 0.3);
+}
+
+/* === СТИЛІ ДЛЯ СТОРІНКИ "ЦІНИ" (Оновлено під скріншот) === */
+
+/* Список переваг ліворуч */
+.value-prop-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.value-prop-list i {
+    font-size: 1.5rem;
+    color: var(--accent-color); /* Фіолетова галочка */
+    margin-top: 2px;
+}
+.value-prop-list strong {
+    color: var(--primary-color);
+    display: block;
+}
+
+/* Картка-лейбл з радіо-кнопкою */
+.pricing-card-radio {
+    border: 2px solid #F0F0F0;
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    transition: all 0.2s ease;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 15px; /* Більший відступ */
+}
+
+/* При наведенні - фіолетова рамка */
+.pricing-card-radio:hover {
+    border-color: #D0BCFF; 
+}
+
+/* Контент картки */
+.pricing-card-radio .card-body {
+    padding: 1rem 1.5rem !important;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Радіо-кнопка (Кастомна) */
+.pricing-card-radio .form-check-input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Активна радіо-кнопка */
+.pricing-card-radio input[type="radio"]:checked {
+    background-color: var(--accent-color); /* Фіолетовий фон */
+    border-color: var(--accent-color);
+}
+/* Галочка всередині */
+.pricing-card-radio input[type="radio"]:checked::before {
+    
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transform: scale(1);
+}
+
+/* Активна КАРТКА (Рамка і тінь) */
+.pricing-card-radio:has(input:checked) {
+    border-color: var(--accent-color);
+    background-color: #FBF9FF; /* Дуже світлий фіолетовий фон */
+    box-shadow: 0 8px 25px rgba(138, 87, 245, 0.15);
+}
+
+/* Бейдж "Популярна пропозиція" (Фіолетовий) */
+.badge-popular {
+    position: absolute;
+    top: 0;
+    left: 20px; /* Зсунуто вліво */
+    transform: none; /* Прибираємо центрування */
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 10px rgba(138, 87, 245, 0.3);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Адаптація популярної картки */
+.pricing-card-radio.popular {
+    margin-top: 10px;
+    border: 2px solid transparent; /* Щоб не стрибало */
+}
+.pricing-card-radio.popular .card-body {
+    padding-top: 1.8rem !important; /* Місце для бейджа */
+}
+/* Коли популярна вибрана */
+.pricing-card-radio.popular:has(input:checked) {
+    border-color: var(--accent-color);
+}
+/* Коли не вибрана, але популярна - легка фіолетова рамка */
+.pricing-card-radio.popular:not(:has(input:checked)) {
+    border-color: #E0D4FC;
+}
+
+/* Ціна (Фіолетова і велика) */
+.price-tag {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 1.8rem !important;
+    line-height: 1;
+}
+.price-tag small {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* === ІНШЕ === */
+.form-control:focus, .form-check-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 .25rem rgba(138, 87, 245, 0.2);
+}
+.checkmark-list li::before {
+    color: var(--accent-color);
+}
+
+.star-rating{
+    color: var(--star-color);
+}
+
+/* Кнопка з прозорим фоном і фіолетовим текстом (для світлих блоків) */
+.btn-outline-purple {
+    background-color: transparent;
+    color: var(--accent-color); /* Фіолетовий текст */
+    border: 2px solid var(--accent-color); /* Фіолетова рамка */
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-purple:hover {
+    background-color: var(--accent-dark); /* Фіолетовий фон при наведенні */
+    color: white; /* Білий текст */
+    transform: translateY(-2px);
+}
+
+/* === СТИЛІ ДЛЯ БЛОКУ ЗАЯВКИ === */
+
+/* М'які поля вводу (сірий фон) */
+.form-control-soft {
+    background-color: #F3F4F6; /* Світло-сірий */
+    border: 1px solid transparent;
+    padding: 12px 20px;
+    border-radius: 12px; /* Округлі кути */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* При натисканні */
+.form-control-soft:focus {
+    background-color: #fff;
+    border-color: var(--accent-color); /* Фіолетова рамка при вводі */
+    box-shadow: 0 0 0 4px rgba(138, 87, 245, 0.1);
+    color: var(--primary-color);
+}
+
+/* Колір плейсхолдера (підказки) */
+.form-control-soft::placeholder {
+    color: #9CA3AF;
+}
+
+/* Ефект наведення на червону кнопку */
+.btn-danger:hover {
+    background-color: var(--accent-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(138, 87, 245, 0.1);
+}
+
+/* === СТИЛІ ДЛЯ КАРТОК ВИКЛАДАЧІВ === */
+
+.teacher-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.teacher-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+/* Обгортка для фото (щоб зробити його гарним квадратом) */
+.teacher-img-wrapper {
+    width: 140px; /* Фіксований розмір як на Preply */
+    height: 140px;
+    position: relative;
+}
+.teacher-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб фото не розтягувалось */
+    border-radius: 12px;
+}
+
+/* Зелена крапка "Онлайн" */
+.status-dot {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #25D366;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Кастомні бейджі (світлий фон, кольоровий текст) */
+.bg-purple-light {
+    background-color: #F3F0FF;
+}
+.text-purple {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.bg-green-light {
+    background-color: #E6FFFA;
+}
+.text-green {
+    color: #00A08B; /* Темніший зелений для тексту */
+    font-weight: 700;
+}
+
+/* Лінія розділення тільки на комп'ютерах */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Обрізка тексту до 2 рядків */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--text-color);
+}
+.blockquote-footer{
+    color: var(--text-muted);
+}
+
+/* === СЕКЦІЯ ДЕТАЛЕЙ КУРСУ === */
+
+/* М'яке коло для іконок */
+.icon-circle-soft {
+    width: 70px;
+    height: 70px;
+    background-color: #F3F0FF; /* Дуже світлий фіолетовий */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* При наведенні на картку іконка трохи підстрибує */
+.card:hover .icon-circle-soft {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--accent-color); /* Стає яскравим */
+}
+.card:hover .icon-circle-soft i {
+    color: white !important; /* Іконка стає білою */
+}
+
+/* Стиль для бейджа "Подарунок" */
+.rounded-bottom-start-3 {
+    border-bottom-left-radius: 12px;
+}
+
+/* === СТИЛІ ДЛЯ НОВОГО РОЗКЛАДУ === */
+
+/* Картка заняття */
+.schedule-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+    border-left: 5px solid var(--accent-color); /* Ефект кольорової полоски при наведенні */
+}
+
+/* Лінія розділення (тільки на ПК) */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Вкладки (Pills) */
+.nav-pills .nav-link {
+    color: var(--primary-color);
+    background-color: #fff;
+    border: 1px solid #eee;
+    transition: all 0.3s;
+}
+.nav-pills .nav-link:hover {
+    border-color: var(--accent-color);
+}
+.nav-pills .nav-link.active {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(138, 87, 245, 0.4);
+}
+
+/* Дрібний текст (spacing) */
+.ls-1 {
+    letter-spacing: 1px;
+}
