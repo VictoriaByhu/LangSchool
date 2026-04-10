@@ -31,9 +31,6 @@ body {
     font-family: 'Manrope', sans-serif;
     color: var(--text-color);
     background-color: var(--body-bg);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-size: 0.95rem;
 }
 
