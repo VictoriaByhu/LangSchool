@@ -11,6 +11,7 @@ import TeacherDashboard from './pages/TeacherDashboard'
 import LevelTest from './pages/LevelTest'
 import FAQ from './pages/FAQ'
 import Prices from './pages/Prices'
+import Feedbacks from './pages/Feedbacks'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/leveltest" element={<LevelTest />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/prices" element={<Prices />} />
+            <Route path="/feedbacks" element={<Feedbacks />} />
           </Routes>
         </div>
         <Footer />
