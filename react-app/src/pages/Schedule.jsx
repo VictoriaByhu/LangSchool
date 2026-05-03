@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { collection, getDocs, doc, updateDoc } from 'firebase/firestore'
+import { collection, getDocs, doc, runTransaction, getDoc, increment } from 'firebase/firestore'
 import { db } from '../services/firebase'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
@@ -9,29 +9,64 @@ function Schedule() {
   const navigate = useNavigate()
   const [schedule, setSchedule] = useState([])
   const [activeTab, setActiveTab] = useState('en')
-  const [booked, setBooked] = useState(false)
+  const [userBalance, setUserBalance] = useState(null) // Стан для балансу
+  const [loading, setLoading] = useState(false)
+
+  // Функція завантаження розкладу та балансу
+  const fetchData = async () => {
+    // Завантажуємо розклад
+    const snapshot = await getDocs(collection(db, 'schedule'))
+    const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+    setSchedule(data)
+
+    // Завантажуємо баланс, якщо користувач залогінений
+    if (currentUser) {
+      const userDoc = await getDoc(doc(db, 'users', currentUser.uid))
+      if (userDoc.exists()) {
+        setUserBalance(userDoc.data().balance || 0)
+      }
+    }
+  }
 
   useEffect(() => {
-    const fetchSchedule = async () => {
-      const snapshot = await getDocs(collection(db, 'schedule'))
-      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-      setSchedule(data)
-    }
-    fetchSchedule()
-  }, [booked])
+      fetchData()
+    }, [currentUser])
 
-  const handleBook = async (lessonId) => {
-    if (!currentUser) {
-      navigate('/login')
-      return
-    }
-    await updateDoc(doc(db, 'schedule', lessonId), {
-      student_id: currentUser.uid,
-      status: 'booked'
-    })
-    setBooked(!booked)
-    alert('Ви успішно записались на урок!')
+    // Знайдіть функцію handleBook у файлі Schedule.jsx
+const handleBook = async (lessonId) => {
+  if (!currentUser) return;
+
+  try {
+    // 1. Отримуємо дані поточного учня з колекції users
+    const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+    const userData = userDoc.data();
+    const studentName = userData?.name || "Учень"; // Беремо ім'я з профілю
+
+    await runTransaction(db, async (transaction) => {
+      const lessonRef = doc(db, 'schedule', lessonId);
+      const userRef = doc(db, 'users', currentUser.uid);
+
+      const lessonSnap = await transaction.get(lessonRef);
+      if (lessonSnap.data().status === 'booked') throw "Вже заброньовано";
+
+      // 2. Записуємо в урок не тільки ID, а й Ім'я
+      transaction.update(lessonRef, {
+        status: 'booked',
+        student_id: currentUser.uid,
+        student_name: studentName // ЦЕ ПОЛЕ ВАЖЛИВЕ
+      });
+
+      transaction.update(userRef, {
+        balance: increment(-1)
+      });
+    });
+
+    alert("Заброньовано!");
+    fetchData();
+  } catch (e) {
+    console.error(e);
   }
+};
 
   const filtered = schedule.filter(s => s.language === activeTab)
 
@@ -40,37 +75,35 @@ function Schedule() {
       <section className="py-5 bg-light">
         <div className="container">
 
-          <div className="text-center mb-5">
+          <div className="text-center mb-4">
             <h2 className="display-6 fw-bold">Розклад занять</h2>
             <p className="lead text-muted">Оберіть зручний час та приєднуйтесь до групи</p>
+            
+            {/* Відображення балансу для зручності учня */}
+            {currentUser && userBalance !== null && (
+              <div className="badge bg-white text-dark border p-2 px-3 rounded-pill shadow-sm">
+                Мій баланс: <span className="fw-bold text-primary">{userBalance} занять</span>
+              </div>
+            )}
           </div>
 
           {/* Вкладки мов */}
           <ul className="nav nav-pills justify-content-center mb-5 gap-3">
-            <li className="nav-item">
-              <button
-                className={`nav-link rounded-pill px-4 fw-bold ${activeTab === 'en' ? 'active' : ''}`}
-                onClick={() => setActiveTab('en')}
-              >Англійська</button>
-            </li>
-            <li className="nav-item">
-              <button
-                className={`nav-link rounded-pill px-4 fw-bold ${activeTab === 'es' ? 'active' : ''}`}
-                onClick={() => setActiveTab('es')}
-              >Іспанська</button>
-            </li>
-            <li className="nav-item">
-              <button
-                className={`nav-link rounded-pill px-4 fw-bold ${activeTab === 'de' ? 'active' : ''}`}
-                onClick={() => setActiveTab('de')}
-              >Німецька</button>
-            </li>
+            {['en', 'es', 'de'].map(lang => (
+              <li className="nav-item" key={lang}>
+                <button
+                  className={`nav-link rounded-pill px-4 fw-bold ${activeTab === lang ? 'active' : ''}`}
+                  onClick={() => setActiveTab(lang)}
+                >
+                  {lang === 'en' ? 'Англійська' : lang === 'es' ? 'Іспанська' : 'Німецька'}
+                </button>
+              </li>
+            ))}
           </ul>
 
-          {/* Картки занять */}
           <div className="d-flex flex-column gap-3">
             {filtered.length === 0 && (
-              <p className="text-center text-muted">Занять поки немає.</p>
+              <p className="text-center text-muted py-5">Занять поки немає.</p>
             )}
             {filtered.map(lesson => (
               <div key={lesson.id} className="schedule-card bg-white p-4 rounded-4 shadow-sm border-0">
@@ -90,15 +123,16 @@ function Schedule() {
                   </div>
                   <div className="col-md-3 text-center text-md-end">
                     {lesson.status === 'booked' && lesson.student_id === currentUser?.uid ? (
-                      <span className="badge bg-success fs-6 px-3 py-2">Ви записані</span>
+                      <span className="badge bg-success-subtle text-success fs-6 px-3 py-2 border border-success-subtle w-100">Ви записані</span>
                     ) : lesson.status === 'booked' ? (
-                      <span className="badge bg-secondary fs-6 px-3 py-2">Місць немає</span>
+                      <span className="badge bg-secondary-subtle text-secondary fs-6 px-3 py-2 w-100">Місць немає</span>
                     ) : (
                       <button
                         className="btn btn-accent px-4 rounded-pill fw-bold w-100"
                         onClick={() => handleBook(lesson.id)}
+                        disabled={loading}
                       >
-                        Записатись
+                        {loading ? 'Бронюємо...' : 'Записатись'}
                       </button>
                     )}
                   </div>
