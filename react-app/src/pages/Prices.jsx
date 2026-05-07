@@ -1,46 +1,19 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const packages = {
-  en: {
-    label: 'Англійська',
-    items: [
-      { lessons: 8, price: '4 000', perLesson: '500', desc: 'Щомісячна оплата (стандарт)' },
-      { lessons: 24, price: '10 800', perLesson: '450', desc: 'Пакет на 3 місяці (економія 10%)', popular: true },
-      { lessons: 48, price: '20 400', perLesson: '425', desc: 'Пакет на 6 місяців (економія 15%)' }
-    ]
-  },
-  es: {
-    label: 'Іспанська',
-    items: [
-      { lessons: 8, price: '4 200', perLesson: '525', desc: 'Щомісячна оплата' },
-      { lessons: 24, price: '11 340', perLesson: '472', desc: 'Пакет на 3 місяці (економія 10%)', popular: true },
-      { lessons: 48, price: '21 420', perLesson: '446', desc: 'Пакет на 6 місяців (економія 15%)' }
-    ]
-  },
-  de: {
-    label: 'Німецька',
-    items: [
-      { lessons: 8, price: '4 200', perLesson: '525', desc: 'Щомісячна оплата' },
-      { lessons: 24, price: '11 340', perLesson: '472', desc: 'Пакет на 3 місяці (економія 10%)', popular: true },
-      { lessons: 48, price: '21 420', perLesson: '446', desc: 'Пакет на 6 місяців (економія 15%)' }
-    ]
-  }
-}
+const packages = [
+  { lessons: 8, price: '4 000', perLesson: '500', desc: 'Щомісячна оплата для регулярного старту' },
+  { lessons: 24, price: '10 800', perLesson: '450', desc: 'Пакет на 3 місяці для стабільного прогресу', popular: true },
+  { lessons: 48, price: '20 400', perLesson: '425', desc: 'Пакет на 6 місяців для довгострокового результату' }
+]
 
 function Prices() {
-  const [activeTab, setActiveTab] = useState('en')
-  const [selected, setSelected] = useState({ en: 24, es: 24, de: 24 })
-
-  const current = packages[activeTab]
-
   return (
     <main className="main-content">
       <section className="py-5">
         <div className="container">
           <div className="text-center mb-5">
             <h1 className="display-5 fw-bold">Обери свій пакет занять</h1>
-            <p className="lead">Почни свій шлях до вільного володіння мовою вже сьогодні</p>
+            <p className="lead">Почни свій шлях до вільної англійської вже сьогодні</p>
           </div>
 
           <div className="row g-5">
@@ -55,7 +28,7 @@ function Prices() {
                     { icon: 'bi-person-check-fill', title: 'Сертифіковані викладачі', desc: 'Наші викладачі мають дипломи CELTA/TEFL' },
                     { icon: 'bi-people-fill', title: 'Маленькі групи (до 6)', desc: 'Гарантована увага та максимум практики' },
                     { icon: 'bi-book-half', title: 'Онлайн-матеріали', desc: 'Доступ до навчальних матеріалів 24/7' },
-                    { icon: 'bi-chat-dots-fill', title: 'Розмовні клуби', desc: 'Безкоштовні клуби для практики мовлення' }
+                    { icon: 'bi-chat-dots-fill', title: 'Speaking clubs', desc: 'Безкоштовні клуби для практики англійської' }
                   ].map((item, i) => (
                     <li key={i}>
                       <i className={`bi ${item.icon}`}></i>
@@ -71,33 +44,20 @@ function Prices() {
 
             {/* Пакети */}
             <div className="col-lg-8">
-              <ul className="nav nav-tabs nav-fill">
-                {Object.entries(packages).map(([key, val]) => (
-                  <li className="nav-item" key={key}>
-                    <button
-                      className={`nav-link ${activeTab === key ? 'active' : ''}`}
-                      onClick={() => setActiveTab(key)}
-                    >{val.label}</button>
-                  </li>
-                ))}
-              </ul>
-
               <div className="pt-4">
                 <div className="d-flex flex-column gap-3">
-                  {current.items.map((pkg) => (
+                  {packages.map((pkg) => (
                     <label
                       key={pkg.lessons}
                       className={`pricing-card-radio ${pkg.popular ? 'popular' : ''}`}
-                      onClick={() => setSelected({ ...selected, [activeTab]: pkg.lessons })}
                     >
                       {pkg.popular && <div className="badge-popular">Популярна пропозиція</div>}
                       <div className="card-body">
                         <input
                           type="radio"
-                          name={`${activeTab}-package`}
+                          name="english-package"
                           className="form-check-input"
-                          checked={selected[activeTab] === pkg.lessons}
-                          onChange={() => setSelected({ ...selected, [activeTab]: pkg.lessons })}
+                          defaultChecked={pkg.popular}
                         />
                         <div className="flex-grow-1">
                           <div className="row align-items-center">
@@ -116,7 +76,7 @@ function Prices() {
                   ))}
                 </div>
                 <Link to="/register" className="btn btn-accent w-100 btn-lg mt-4">
-                  Почати навчання ({current.label})
+                  Почати навчання англійської
                 </Link>
               </div>
             </div>
@@ -150,8 +110,8 @@ function Prices() {
                   <div className="icon-circle-soft mx-auto mb-3">
                     <i className="bi bi-chat-quote-fill fs-2" style={{ color: 'var(--accent-color)' }}></i>
                   </div>
-                  <h4 className="fw-bold">Розмовні клуби</h4>
-                  <p className="text-muted small">Безлімітний доступ до групових зустрічей з носіями мови.</p>
+                  <h4 className="fw-bold">Speaking clubs</h4>
+                  <p className="text-muted small">Безлімітний доступ до групових зустрічей з носіями англійської.</p>
                 </div>
                 <div className="bg-white rounded-3 p-3 shadow-sm">
                   {[['8 занять', '+1 місяць'], ['24 заняття', '+3 місяці'], ['48 занять', '+6 місяців']].map(([pkg, bonus]) => (

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const teachers = [
@@ -7,7 +6,7 @@ const teachers = [
     name: 'Анна К.',
     flag: '🇺🇦',
     badges: ['Professional', 'Super Tutor'],
-    teaches: 'Англійська (Native), Німецька (B2)',
+    teaches: 'Англійська',
     students: '23 активних • 1,270 уроків',
     bio: 'Сертифікований викладач CELTA з 8-річним досвідом. Спеціалізуюсь на розмовній англійській та підготовці до IELTS.',
     rating: '5.0',
@@ -27,18 +26,6 @@ const teachers = [
     photo: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=80'
   },
   {
-    id: 3,
-    name: 'Карлос Р.',
-    flag: '🇪🇸',
-    badges: ['DELE Examiner', 'Super Tutor'],
-    teaches: 'Іспанська (Native), Англійська (C1)',
-    students: '38 активних • 2,100 уроків',
-    bio: '¡Hola! Я носій іспанської з Мадрида. Готую до екзаменів DELE всіх рівнів.',
-    rating: '5.0',
-    reviews: 42,
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'
-  },
-  {
     id: 4,
     name: 'Сара Л.',
     flag: '🇺🇸',
@@ -52,25 +39,14 @@ const teachers = [
   }
 ]
 
-const courses = {
-  en: [
-    { title: 'Англійська (A1-B2)', desc: 'Комплексні програми для всіх рівнів.' },
-    { title: 'Розмовний клуб', desc: 'Практика в невеликих групах з носієм мови.' },
-    { title: 'Підготовка до IELTS', desc: 'Спеціалізований курс з практикою всіх аспектів.' }
-  ],
-  es: [
-    { title: 'Іспанська (A1-B2)', desc: 'Від простих вітань до складних розмов.' },
-    { title: 'Розмовний клуб', desc: 'Практика навичок у невимушеній атмосфері.' }
-  ],
-  de: [
-    { title: 'Німецька (A1-B2)', desc: 'Від базової граматики до просунутої дискусії.' },
-    { title: 'Розмовний клуб', desc: 'Практика мовлення у реальних сценаріях.' }
-  ]
-}
+const courses = [
+  { title: 'Англійська (A1-B2)', desc: 'Комплексна програма для всіх рівнів.' },
+  { title: 'Розмовна англійська', desc: 'Практика в невеликих групах з носієм англійської.' },
+  { title: 'Підготовка до IELTS', desc: 'Спеціалізований курс з практикою всіх аспектів іспиту.' },
+  { title: 'Business English', desc: 'Англійська для роботи, презентацій, листування та співбесід.' }
+]
 
 function About() {
-  const [activeTab, setActiveTab] = useState('en')
-
   return (
     <main className="main-content">
 
@@ -121,7 +97,7 @@ function About() {
         <div className="container text-center">
           <h2 className="display-6 fw-bold mb-4 text-white">Наша місія 💼</h2>
           <p className="lead col-lg-8 mx-auto" style={{ color: 'rgba(255,255,255,0.8)' }}>
-            У LinguaLab наша місія — надати людям можливість впевнено спілкуватися між культурами.
+            У LinguaLab наша місія — допомогти людям впевнено говорити англійською в навчанні, роботі та подорожах.
           </p>
         </div>
       </section>
@@ -209,19 +185,9 @@ function About() {
       <section id="courses" className="py-5">
         <div className="container">
           <h2 className="mb-2">Наші курси</h2>
-          <p className="mb-4">Ми пропонуємо курси для різних рівнів та вікових груп.</p>
-          <ul className="nav nav-tabs">
-            {[['en', 'Англійська'], ['es', 'Іспанська'], ['de', 'Німецька']].map(([key, label]) => (
-              <li className="nav-item" key={key}>
-                <button
-                  className={`nav-link ${activeTab === key ? 'active' : ''}`}
-                  onClick={() => setActiveTab(key)}
-                >{label}</button>
-              </li>
-            ))}
-          </ul>
+          <p className="mb-4">Ми пропонуємо курси англійської для різних рівнів та вікових груп.</p>
           <div className="row gy-3 mt-3">
-            {courses[activeTab].map((course, i) => (
+            {courses.map((course, i) => (
               <div className="col-md-6 col-lg-4" key={i}>
                 <div className="card h-100 course-card">
                   <div className="card-body">

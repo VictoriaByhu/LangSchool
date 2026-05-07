@@ -10,8 +10,7 @@ function Home() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    telegram: '',
-    language: ''
+    telegram: ''
   })
   const [submitted, setSubmitted] = useState(false)
 
@@ -20,11 +19,12 @@ function Home() {
     try {
       await addDoc(collection(db, 'trial_requests'), {
         ...formData,
+        language: 'en',
         status: 'new',
         createdAt: serverTimestamp()
       })
       setSubmitted(true)
-      setFormData({ name: '', phone: '', telegram: '', language: '' })
+      setFormData({ name: '', phone: '', telegram: '' })
     } catch (error) {
       console.error('Помилка:', error)
     }
@@ -41,15 +41,15 @@ function Home() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <h1 className="display-5">Вивчайте мови легко з LinguaLab</h1>
-              <p className="lead">Індивідуальні та групові заняття онлайн. Програми для початківців та просунутих – ми знайдемо підхід для кожного.</p>
+              <h1 className="display-5">Вивчайте англійську легко з LinguaLab</h1>
+              <p className="lead">Індивідуальні та групові заняття онлайн. Англійська для початківців, впевненого спілкування, роботи та підготовки до IELTS.</p>
               <p>
                 <Link className="btn btn-lg btn-primary me-2" to="/about">Наші курси</Link>
                 <Link className="btn btn-outline-secondary btn-lg" to="/prices">Дізнайтеся ціни</Link>
               </p>
               <ul className="list-unstyled mt-4 d-flex gap-3">
                 <li className="d-flex align-items-center"><span className="badge bg-success me-2">Онлайн</span> Заняття зручні з будь-якого місця</li>
-                <li className="d-flex align-items-center"><span className="badge bg-info me-2">У групах</span> До 6 осіб для практики розмовної мови</li>
+                <li className="d-flex align-items-center"><span className="badge bg-info me-2">У групах</span> До 6 осіб для практики розмовної англійської</li>
               </ul>
             </div>
 
@@ -78,12 +78,12 @@ function Home() {
         </div>
       </section>
 
-      {/* Мови */}
+      {/* Англійська */}
       <section className="container py-5 mt-5">
         <div className="row text-center mb-4">
           <div className="col-12">
-            <h2 className="display-6 fw-bold">Ознайомтеся з нашими основними мовами</h2>
-            <p className="lead">Від новачка до просунутого, знайдіть свій шлях.</p>
+            <h2 className="display-6 fw-bold">Оберіть свій напрям англійської</h2>
+            <p className="lead">Від першого уроку до впевненої розмови, IELTS та бізнес-комунікації.</p>
           </div>
         </div>
         <div className="row g-4 justify-content-center">
@@ -99,8 +99,8 @@ function Home() {
           <div className="col-lg-4 col-md-6">
             <div className="card h-100 featured-course-card">
               <div className="card-body">
-                <h3 className="card-title">Іспанська</h3>
-                <p className="card-text">Опануйте основи або вдосконалюйте свою вільну мову за допомогою наших комплексних програм.</p>
+                <h3 className="card-title">Розмовна англійська</h3>
+                <p className="card-text">Практика живих діалогів, вимови та впевненості у спілкуванні з викладачем і групою.</p>
                 <Link to="/about" className="stretched-link text-decoration-none">Дізнатися більше</Link>
               </div>
             </div>
@@ -108,8 +108,8 @@ function Home() {
           <div className="col-lg-4 col-md-6">
             <div className="card h-100 featured-course-card">
               <div className="card-body">
-                <h3 className="card-title">Німецька</h3>
-                <p className="card-text">Створіть міцну основу німецької граматики та почніть розмовляти з першого дня.</p>
+                <h3 className="card-title">Business English</h3>
+                <p className="card-text">Англійська для роботи, презентацій, листування, співбесід та міжнародних команд.</p>
                 <Link to="/about" className="stretched-link text-decoration-none">Дізнатися більше</Link>
               </div>
             </div>
@@ -158,16 +158,6 @@ function Home() {
                       <input type="text" className="form-control" placeholder="Телеграм-нікнейм"
                         value={formData.telegram}
                         onChange={(e) => setFormData({ ...formData, telegram: e.target.value })} />
-                    </div>
-                    <div className="mb-4">
-                      <select className="form-select" value={formData.language}
-                        onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-                        required>
-                        <option value="" disabled>Оберіть мову</option>
-                        <option value="en">Англійська</option>
-                        <option value="es">Іспанська</option>
-                        <option value="de">Німецька</option>
-                      </select>
                     </div>
                     <button type="submit" className="btn btn-danger w-100 fw-bold py-3 rounded-3 mb-3">
                       Записатись зараз

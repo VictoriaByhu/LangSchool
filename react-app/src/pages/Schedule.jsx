@@ -8,7 +8,6 @@ function Schedule() {
   const { currentUser } = useAuth()
   const navigate = useNavigate()
   const [schedule, setSchedule] = useState([])
-  const [activeTab, setActiveTab] = useState('en')
   const [userBalance, setUserBalance] = useState(null) // Стан для балансу
   const [loading, setLoading] = useState(false)
 
@@ -68,7 +67,7 @@ const handleBook = async (lessonId) => {
   }
 };
 
-  const filtered = schedule.filter(s => s.language === activeTab)
+  const filtered = schedule.filter(s => !s.language || s.language === 'en')
 
   return (
     <main className="main-content">
@@ -86,20 +85,6 @@ const handleBook = async (lessonId) => {
               </div>
             )}
           </div>
-
-          {/* Вкладки мов */}
-          <ul className="nav nav-pills justify-content-center mb-5 gap-3">
-            {['en', 'es', 'de'].map(lang => (
-              <li className="nav-item" key={lang}>
-                <button
-                  className={`nav-link rounded-pill px-4 fw-bold ${activeTab === lang ? 'active' : ''}`}
-                  onClick={() => setActiveTab(lang)}
-                >
-                  {lang === 'en' ? 'Англійська' : lang === 'es' ? 'Іспанська' : 'Німецька'}
-                </button>
-              </li>
-            ))}
-          </ul>
 
           <div className="d-flex flex-column gap-3">
             {filtered.length === 0 && (

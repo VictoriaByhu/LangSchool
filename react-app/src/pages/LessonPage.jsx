@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { lessons } from '../data/lessons';
+import lessonHero from '../assets/images/hello_sunset.png';
 import VocabStep from '../components/LessonSteps/VocabStep';
 import TheoryStep from '../components/LessonSteps/TheoryStep';
 import PhrasebookStep from '../components/LessonSteps/PhrasebookStep';
@@ -17,11 +18,13 @@ function LessonPage() {
     <main className="py-5 bg-light min-vh-100">
       <div className="container">
         {/* Шапка уроку */}
-        <div className="rounded-4 overflow-hidden mb-4 shadow-sm position-relative" style={{height: '200px'}}>
-            <img src={currentLesson.image} className="w-100 h-100 object-fit-cover" alt="" />
-            <div className="position-absolute bottom-0 start-0 p-4 text-white bg-dark bg-opacity-50 w-100">
-                <h2 className="m-0 fw-bold">{currentLesson.title}</h2>
-            </div>
+        <div className="rounded-4 overflow-hidden mb-4 shadow-sm position-relative lesson-hero-banner">
+          <div className="lesson-hero-visual">
+            <img src={lessonHero} className="lesson-hero-image" alt="" />
+          </div>
+          <div className="position-absolute bottom-0 start-0 p-4 text-white w-100 lesson-hero-title">
+            <h2 className="m-0 fw-bold">{currentLesson.title}</h2>
+          </div>
         </div>
 
         <div className="row">

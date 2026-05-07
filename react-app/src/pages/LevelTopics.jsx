@@ -1,19 +1,30 @@
-import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import ProgressCircle from '../components/ProgressCircle';
 import { lessons } from '../data/lessons';
-import ProgressCircle from '../components/ProgressCircle'; // Імпортуємо наш новий компонент
+import { PROGRESS_UPDATED_EVENT, readUserProgress } from '../utils/progressStorage';
 
 function LevelTopics() {
   const { level } = useParams();
-
-  // Додаємо захист: якщо рівня не існує, topics буде порожнім масивом
   const topics = lessons && level ? (lessons[level] || []) : [];
-  
-  // Отримуємо об'єкт прогресу з localStorage
-  const userProgress = JSON.parse(localStorage.getItem('userProgress') || '{}');
+  const [userProgress, setUserProgress] = useState(() => readUserProgress());
+
+  useEffect(() => {
+    const refreshProgress = () => setUserProgress(readUserProgress());
+
+    refreshProgress();
+    window.addEventListener(PROGRESS_UPDATED_EVENT, refreshProgress);
+    window.addEventListener('storage', refreshProgress);
+
+    return () => {
+      window.removeEventListener(PROGRESS_UPDATED_EVENT, refreshProgress);
+      window.removeEventListener('storage', refreshProgress);
+    };
+  }, []);
 
   const levelTitles = {
-    'elementary': 'Elementary (A1-A2)',
-    'intermediate': 'Intermediate (B1-B2)',
+    elementary: 'Elementary (A1-A2)',
+    intermediate: 'Intermediate (B1-B2)',
     'upper-intermediate': 'Upper-Intermediate (B2-C1)'
   };
 
@@ -41,29 +52,27 @@ function LevelTopics() {
             <div className="d-flex flex-column gap-3">
               {topics.length > 0 ? (
                 topics.map((topic, index) => {
-                  // Витягуємо прогрес для конкретного уроку (якщо немає - 0%)
-                  const progressPercentage = userProgress[topic.id] ? userProgress[topic.id].score : 0;
+                  const progressPercentage = userProgress[topic.id]?.score || 0;
 
                   return (
-                    <Link 
-                      key={topic.id} 
-                      to={`/self-study/${level}/${topic.id}`} 
+                    <Link
+                      key={topic.id}
+                      to={`/self-study/${level}/${topic.id}`}
                       className="text-decoration-none"
                     >
                       <div className="card border-0 shadow-sm p-4 rounded-4 hover-lift transition-all">
                         <div className="d-flex align-items-center">
                           <div className="flex-shrink-0 me-4">
-                            {/* ВИКОРИСТОВУЄМО ШКАЛУ ПРОГРЕСУ ЗАМІСТЬ СТАТИЧНОГО КРУЖЕЧКА */}
-                            <ProgressCircle 
-                              percentage={progressPercentage} 
-                              number={index + 1} 
+                            <ProgressCircle
+                              percentage={progressPercentage}
+                              number={index + 1}
                             />
                           </div>
                           <div className="flex-grow-1">
                             <h5 className="fw-bold mb-1 text-dark">{topic.title}</h5>
                             <div className="d-flex gap-3 small text-muted">
                               <span>
-                                <i className="bi bi-book me-1"></i> 
+                                <i className="bi bi-book me-1"></i>
                                 {topic.vocabulary?.length || 0} слів
                               </span>
                               <span>

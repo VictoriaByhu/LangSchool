@@ -22,7 +22,7 @@ const levels = [
     id: 'upper-intermediate', 
     title: 'Upper-Intermediate', 
     code: 'B2-C1', 
-    desc: 'Вільне володіння мовою, ідіоми та підготовка до складних дискусій.',
+    desc: 'Вільне володіння англійською, ідіоми та підготовка до складних дискусій.',
     color: 'border-warning',
     icon: 'bi-gem'
   }
