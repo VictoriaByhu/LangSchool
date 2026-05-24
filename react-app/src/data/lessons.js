@@ -177,5 +177,171 @@ export const lessons = {
         }
       ]
     }
+  ],
+  intermediate: [
+    {
+      id: 'workplace-communication',
+      title: '01 Workplace Communication',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80',
+
+      vocabulary: [
+        { id: 1, word: 'deadline', translation: 'дедлайн / кінцевий термін', img: 'https://cdn-icons-png.flaticon.com/512/2693/2693507.png' },
+        { id: 2, word: 'priority', translation: 'пріоритет', img: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png' },
+        { id: 3, word: 'clarify', translation: 'уточнювати', img: 'https://cdn-icons-png.flaticon.com/512/4712/4712035.png' },
+        { id: 4, word: 'proposal', translation: 'пропозиція', img: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' },
+        { id: 5, word: 'feedback', translation: 'відгук / зворотний зв’язок', img: 'https://cdn-icons-png.flaticon.com/512/942/942748.png' },
+        { id: 6, word: 'schedule', translation: 'розклад / планувати', img: 'https://cdn-icons-png.flaticon.com/512/747/747310.png' },
+        { id: 7, word: 'delay', translation: 'затримка', img: 'https://cdn-icons-png.flaticon.com/512/2088/2088617.png' },
+        { id: 8, word: 'approve', translation: 'схвалювати', img: 'https://cdn-icons-png.flaticon.com/512/190/190411.png' },
+        { id: 9, word: 'negotiate', translation: 'вести переговори', img: 'https://cdn-icons-png.flaticon.com/512/4207/4207247.png' },
+        { id: 10, word: 'requirement', translation: 'вимога', img: 'https://cdn-icons-png.flaticon.com/512/2666/2666505.png' },
+        { id: 11, word: 'available', translation: 'доступний / вільний', img: 'https://cdn-icons-png.flaticon.com/512/5610/5610944.png' },
+        { id: 12, word: 'update', translation: 'оновлення', img: 'https://cdn-icons-png.flaticon.com/512/1828/1828911.png' },
+        { id: 13, word: 'resolve', translation: 'вирішувати', img: 'https://cdn-icons-png.flaticon.com/512/753/753345.png' },
+        { id: 14, word: 'consider', translation: 'розглядати', img: 'https://cdn-icons-png.flaticon.com/512/3405/3405802.png' },
+        { id: 15, word: 'outcome', translation: 'результат', img: 'https://cdn-icons-png.flaticon.com/512/3135/3135789.png' },
+        { id: 16, word: 'brief', translation: 'короткий / інструктаж', img: 'https://cdn-icons-png.flaticon.com/512/942/942799.png' }
+      ],
+
+      theory: [
+        {
+          id: 'polite-requests',
+          title: 'Polite Requests',
+          type: 'list',
+          content: [
+            'Could you send me the update by Friday?',
+            'Would it be possible to move the meeting to 3 p.m.?',
+            'Do you mind clarifying the main requirement?',
+            'I was wondering if we could discuss the proposal tomorrow.'
+          ],
+          info: 'Use Could you / Would it be possible / I was wondering to sound polite and professional.'
+        },
+        {
+          id: 'softening-opinions',
+          title: 'Softening Opinions',
+          type: 'list',
+          content: [
+            'I think we should focus on the main priority first.',
+            'It seems that the deadline may be difficult to meet.',
+            'From my point of view, this outcome is realistic.',
+            'Perhaps we could consider another option.'
+          ],
+          info: 'Intermediate speakers often soften direct opinions with I think, it seems, perhaps, and from my point of view.'
+        },
+        {
+          id: 'meeting-language',
+          title: 'Useful Meeting Language',
+          type: 'list',
+          content: [
+            'Let’s go through the agenda.',
+            'Could you give us a brief update?',
+            'What is the next step?',
+            'Let’s agree on the deadline before we finish.'
+          ]
+        }
+      ],
+
+      phrasebook: [
+        { id: 101, phrase: 'Could you clarify the main requirement?', translation: 'Не могли б ви уточнити головну вимогу?' },
+        { id: 102, phrase: 'I will send you a brief update by the end of the day.', translation: 'Я надішлю вам коротке оновлення до кінця дня.' },
+        { id: 103, phrase: 'We need to agree on the deadline.', translation: 'Нам потрібно домовитися про дедлайн.' },
+        { id: 104, phrase: 'The proposal looks good, but we need more feedback.', translation: 'Пропозиція виглядає добре, але нам потрібно більше відгуків.' },
+        { id: 105, phrase: 'Would it be possible to schedule the meeting for tomorrow?', translation: 'Чи можливо запланувати зустріч на завтра?' },
+        { id: 106, phrase: 'This task should be our top priority.', translation: 'Це завдання має бути нашим головним пріоритетом.' },
+        { id: 107, phrase: 'There might be a short delay.', translation: 'Може бути невелика затримка.' },
+        { id: 108, phrase: 'Let’s consider another option.', translation: 'Давайте розглянемо інший варіант.' },
+        { id: 109, phrase: 'Who needs to approve the final version?', translation: 'Хто має схвалити фінальну версію?' },
+        { id: 110, phrase: 'What outcome do we expect?', translation: 'Якого результату ми очікуємо?' }
+      ],
+
+      practice: [
+        {
+          id: 201,
+          type: 'input',
+          question: 'Could you ____ the main requirement?',
+          answer: 'clarify'
+        },
+        {
+          id: 202,
+          type: 'input',
+          question: 'This task is our top ____.',
+          answer: 'priority'
+        },
+        {
+          id: 203,
+          type: 'constructor',
+          translation: 'Чи можливо запланувати зустріч на завтра?',
+          steps: [
+            { options: ['Would', 'Could', 'Should'], correct: 'Would' },
+            { options: ['it be possible', 'it possible be', 'be it possible'], correct: 'it be possible' },
+            { options: ['to schedule', 'schedule to', 'scheduling'], correct: 'to schedule' },
+            { options: ['the meeting', 'a meet', 'the meet'], correct: 'the meeting' },
+            { options: ['for tomorrow', 'on tomorrow', 'at tomorrow'], correct: 'for tomorrow' }
+          ]
+        },
+        {
+          id: 204,
+          type: 'constructor',
+          translation: 'Нам потрібно домовитися про дедлайн.',
+          steps: [
+            { options: ['We', 'Our', 'Us'], correct: 'We' },
+            { options: ['need to', 'need', 'must to'], correct: 'need to' },
+            { options: ['agree on', 'agree with', 'agree to'], correct: 'agree on' },
+            { options: ['the deadline', 'deadline the', 'a delay'], correct: 'the deadline' }
+          ]
+        },
+        {
+          id: 205,
+          type: 'input',
+          question: 'There might be a short ____.',
+          answer: 'delay'
+        },
+        {
+          id: 206,
+          type: 'constructor',
+          translation: 'Я надішлю коротке оновлення до кінця дня.',
+          steps: [
+            { options: ['I will', 'I am', 'I do'], correct: 'I will' },
+            { options: ['send', 'sent', 'sending'], correct: 'send' },
+            { options: ['a brief update', 'briefly update', 'an update brief'], correct: 'a brief update' },
+            { options: ['by the end', 'in the end', 'at the end'], correct: 'by the end' },
+            { options: ['of the day', 'from the day', 'on the day'], correct: 'of the day' }
+          ]
+        },
+        {
+          id: 207,
+          type: 'input',
+          question: 'Who needs to ____ the final version?',
+          answer: 'approve'
+        },
+        {
+          id: 208,
+          type: 'constructor',
+          translation: 'Давайте розглянемо інший варіант.',
+          steps: [
+            { options: ['Let’s', 'Lets', 'Let'], correct: 'Let’s' },
+            { options: ['consider', 'clarify', 'approve'], correct: 'consider' },
+            { options: ['another option', 'other option', 'another outcome'], correct: 'another option' }
+          ]
+        },
+        {
+          id: 209,
+          type: 'input',
+          question: 'What ____ do we expect?',
+          answer: 'outcome'
+        },
+        {
+          id: 210,
+          type: 'constructor',
+          translation: 'Пропозиція виглядає добре, але нам потрібно більше відгуків.',
+          steps: [
+            { options: ['The proposal', 'The priority', 'The schedule'], correct: 'The proposal' },
+            { options: ['looks good', 'look good', 'looks well'], correct: 'looks good' },
+            { options: ['but we need', 'but need we', 'and we needs'], correct: 'but we need' },
+            { options: ['more feedback', 'many feedbacks', 'more proposal'], correct: 'more feedback' }
+          ]
+        }
+      ]
+    }
   ]
 };

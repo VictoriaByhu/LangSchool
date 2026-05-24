@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { doc, getDoc } from 'firebase/firestore'
 import { auth, db } from '../services/firebase'
-import logo from '../assets/images/logo.PNG'
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -12,21 +11,25 @@ function Login() {
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
-    try {
-      const result = await signInWithEmailAndPassword(auth, email, password)
-      const docSnap = await getDoc(doc(db, 'users', result.user.uid))
-      const role = docSnap.data().role
-      if (role === 'teacher') {
-        navigate('/teacher')
-      } else {
-        navigate('/student')
-      }
-    } catch (err) {
-      setError('Невірний email або пароль')
+  e.preventDefault()
+  setError('')
+  try {
+    const result = await signInWithEmailAndPassword(auth, email, password)
+    const docSnap = await getDoc(doc(db, 'users', result.user.uid))
+    
+    if (!docSnap.exists()) {
+      setError('Профіль користувача не знайдено у базі даних.')
+      return
     }
+
+    const role = docSnap.data().role
+    console.log('Роль користувача:', role) // для діагностики
+    navigate(role === 'teacher' ? '/teacher' : '/student')
+  } catch (err) {
+    console.error(err)
+    setError('Невірний email або пароль: ' + err.message)
   }
+}
 
   return (
       <main className="main-content py-5 mt-5">

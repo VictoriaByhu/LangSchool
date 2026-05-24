@@ -15,7 +15,11 @@ const PrivateRoute = ({ children, role }) => {
   }
 
   // Якщо вказана роль (наприклад, 'student') і вона не збігається — відправляємо на головну
-  if (role && userRole !== role) {
+  if (role === 'teacher' && userRole !== 'teacher') {
+    return <Navigate to="/" />;
+  }
+
+  if (role === 'student' && userRole && userRole !== 'student') {
     return <Navigate to="/" />;
   }
 

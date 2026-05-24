@@ -13,11 +13,17 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        const docSnap = await getDoc(doc(db, 'users', user.uid))
-        if (docSnap.exists()) {
-          setUserRole(docSnap.data().role)
-        }
         setCurrentUser(user)
+        setUserRole(null)
+
+        try {
+          const docSnap = await getDoc(doc(db, 'users', user.uid))
+          if (docSnap.exists()) {
+            setUserRole(docSnap.data().role)
+          }
+        } catch (error) {
+          console.error('Could not load user profile:', error)
+        }
       } else {
         setCurrentUser(null)
         setUserRole(null)
@@ -28,7 +34,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ currentUser, userRole }}>
+    <AuthContext.Provider value={{ currentUser, userRole, loading }}>
       {!loading && children}
     </AuthContext.Provider>
   )
